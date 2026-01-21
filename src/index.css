@@ -53,13 +53,13 @@
     --gold: 236 21% 13%;
     --gold-light: 250 32% 36%;
     --cream: 40 33% 97%;
-    --cream-dark: 40 25% 92%;
+    --cream-dark: 262 100% 98%;
     --walnut: 25 35% 25%;
     --charcoal: 30 15% 15%;
 
     /* Gradients */
     --gradient-gold: linear-gradient(135deg, hsl(236,21%,13%), hsl(250,32%,36%));
-    --gradient-cream: linear-gradient(180deg, hsl(40 33% 97%), hsl(40 25% 92%));
+    --gradient-cream: linear-gradient(180deg, hsl(40 33% 97%), hsl(262 100% 98%));
     --gradient-hero: linear-gradient(135deg, hsl(30 15% 15% / 0.85), hsl(25 35% 25% / 0.75));
     --gradient-overlay: linear-gradient(180deg, hsl(30 15% 15% / 0.4), hsl(30 15% 15% / 0.8));
 
