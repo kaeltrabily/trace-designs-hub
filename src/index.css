@@ -50,15 +50,15 @@
     --radius: 0.5rem;
 
     /* Custom design tokens */
-    --gold: 38 55% 50%;
-    --gold-light: 40 45% 70%;
+    --gold: 236 21% 13%;
+    --gold-light: 250 32% 36%;
     --cream: 40 33% 97%;
     --cream-dark: 40 25% 92%;
     --walnut: 25 35% 25%;
     --charcoal: 30 15% 15%;
 
     /* Gradients */
-    --gradient-gold: linear-gradient(135deg, hsl(38 55% 50%), hsl(40 45% 60%));
+    --gradient-gold: linear-gradient(135deg, hsl(236,21%,13%), hsl(250,32%,36%));
     --gradient-cream: linear-gradient(180deg, hsl(40 33% 97%), hsl(40 25% 92%));
     --gradient-hero: linear-gradient(135deg, hsl(30 15% 15% / 0.85), hsl(25 35% 25% / 0.75));
     --gradient-overlay: linear-gradient(180deg, hsl(30 15% 15% / 0.4), hsl(30 15% 15% / 0.8));
