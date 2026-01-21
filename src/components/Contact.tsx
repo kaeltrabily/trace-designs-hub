@@ -64,10 +64,10 @@ const Contact = () => {
                   <div>
                     <p className="font-medium text-card-foreground">Phone</p>
                     <a
-                      href="tel:+966500000000"
+                      href="http://wa.me/201064677251"
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      +966 50 000 0000
+                      (+20)1064677251
                     </a>
                   </div>
                 </div>
@@ -79,10 +79,10 @@ const Contact = () => {
                   <div>
                     <p className="font-medium text-card-foreground">Email</p>
                     <a
-                      href="mailto:info@trace-designs.online"
+                      href="mailto:Contact-Us@Trace-Designs.online"
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      info@trace-designs.online
+                      Contact-Us@Trace-Designs.online
                     </a>
                   </div>
                 </div>
@@ -93,7 +93,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium text-card-foreground">Location</p>
-                    <p className="text-muted-foreground">Saudi Arabia</p>
+                    <p className="text-muted-foreground">New Damietta - Damietta - Egypt</p>
                   </div>
                 </div>
               </div>
