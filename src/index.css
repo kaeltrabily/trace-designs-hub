@@ -2,95 +2,115 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Trace Designs - Elegant Interior Design Theme */
+/* Cream, Gold, Walnut tones inspired by luxury interiors */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core palette - Cream & Warm neutrals */
+    --background: 40 33% 97%;
+    --foreground: 30 15% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 40 25% 95%;
+    --card-foreground: 30 15% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 40 33% 97%;
+    --popover-foreground: 30 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Elegant Gold */
+    --primary: 38 55% 45%;
+    --primary-foreground: 40 33% 97%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Warm Taupe */
+    --secondary: 30 12% 85%;
+    --secondary-foreground: 30 15% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted - Soft Gray */
+    --muted: 30 10% 90%;
+    --muted-foreground: 30 10% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Walnut Brown */
+    --accent: 25 35% 30%;
+    --accent-foreground: 40 33% 97%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 30 15% 85%;
+    --input: 30 15% 85%;
+    --ring: 38 55% 45%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Custom design tokens */
+    --gold: 38 55% 50%;
+    --gold-light: 40 45% 70%;
+    --cream: 40 33% 97%;
+    --cream-dark: 40 25% 92%;
+    --walnut: 25 35% 25%;
+    --charcoal: 30 15% 15%;
+    
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(38 55% 50%), hsl(40 45% 60%));
+    --gradient-cream: linear-gradient(180deg, hsl(40 33% 97%), hsl(40 25% 92%));
+    --gradient-hero: linear-gradient(135deg, hsl(30 15% 15% / 0.85), hsl(25 35% 25% / 0.75));
+    --gradient-overlay: linear-gradient(180deg, hsl(30 15% 15% / 0.4), hsl(30 15% 15% / 0.8));
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(30 15% 15% / 0.08);
+    --shadow-elevated: 0 8px 30px hsl(30 15% 15% / 0.12);
+    --shadow-gold: 0 4px 20px hsl(38 55% 50% / 0.25);
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 40 25% 95%;
+    --sidebar-foreground: 30 15% 20%;
+    --sidebar-primary: 38 55% 45%;
+    --sidebar-primary-foreground: 40 33% 97%;
+    --sidebar-accent: 30 12% 85%;
+    --sidebar-accent-foreground: 30 15% 20%;
+    --sidebar-border: 30 15% 85%;
+    --sidebar-ring: 38 55% 45%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 30 15% 10%;
+    --foreground: 40 25% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 30 15% 13%;
+    --card-foreground: 40 25% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 30 15% 10%;
+    --popover-foreground: 40 25% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 38 55% 55%;
+    --primary-foreground: 30 15% 10%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 30 12% 20%;
+    --secondary-foreground: 40 25% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 30 12% 18%;
+    --muted-foreground: 30 10% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 38 45% 45%;
+    --accent-foreground: 40 25% 95%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 30 12% 20%;
+    --input: 30 12% 20%;
+    --ring: 38 55% 55%;
+
+    --sidebar-background: 30 15% 10%;
+    --sidebar-foreground: 40 25% 95%;
+    --sidebar-primary: 38 55% 55%;
+    --sidebar-primary-foreground: 30 15% 10%;
+    --sidebar-accent: 30 12% 18%;
+    --sidebar-accent-foreground: 40 25% 95%;
+    --sidebar-border: 30 12% 20%;
+    --sidebar-ring: 38 55% 55%;
   }
 }
 
@@ -100,6 +120,208 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
   }
+
+  /* RTL Support */
+  [dir="rtl"] body {
+    font-family: 'Noto Sans Arabic', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  [dir="rtl"] h1, 
+  [dir="rtl"] h2, 
+  [dir="rtl"] h3, 
+  [dir="rtl"] h4, 
+  [dir="rtl"] h5, 
+  [dir="rtl"] h6 {
+    font-family: 'Noto Sans Arabic', serif;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Hero button variant */
+  .btn-hero {
+    @apply px-8 py-4 text-base font-medium transition-all duration-300;
+    background: var(--gradient-gold);
+    color: hsl(var(--cream));
+    box-shadow: var(--shadow-gold);
+  }
+
+  .btn-hero:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px hsl(38 55% 50% / 0.35);
+  }
+
+  .btn-hero-outline {
+    @apply px-8 py-4 text-base font-medium transition-all duration-300 border-2;
+    border-color: hsl(var(--cream) / 0.5);
+    color: hsl(var(--cream));
+    background: transparent;
+  }
+
+  .btn-hero-outline:hover {
+    background: hsl(var(--cream) / 0.1);
+    border-color: hsl(var(--cream));
+  }
+
+  /* Section styling */
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight;
+    color: hsl(var(--charcoal));
+  }
+
+  .section-subtitle {
+    @apply text-lg md:text-xl max-w-2xl;
+    color: hsl(var(--muted-foreground));
+  }
+
+  /* Gold accent line */
+  .gold-line {
+    @apply w-16 h-1 rounded-full;
+    background: var(--gradient-gold);
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-500;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  /* Image overlay */
+  .img-overlay {
+    @apply absolute inset-0;
+    background: var(--gradient-overlay);
+  }
+
+  /* Animated underline for links */
+  .link-underline {
+    @apply relative inline-block;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute w-full h-0.5 bottom-0 left-0 origin-bottom-right transition-transform duration-300 scale-x-0;
+    background: var(--gradient-gold);
+  }
+
+  .link-underline:hover::after {
+    @apply origin-bottom-left scale-x-100;
+  }
+
+  /* WhatsApp button */
+  .whatsapp-btn {
+    @apply fixed bottom-6 z-50 p-4 rounded-full shadow-lg transition-all duration-300;
+    background: hsl(142 70% 45%);
+    color: white;
+  }
+
+  [dir="ltr"] .whatsapp-btn {
+    @apply right-6;
+  }
+
+  [dir="rtl"] .whatsapp-btn {
+    @apply left-6;
+  }
+
+  .whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px hsl(142 70% 45% / 0.4);
+  }
+}
+
+@layer utilities {
+  /* Fade in animation */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Slide in from left */
+  .animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Slide in from right */
+  .animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out forwards;
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Scale in */
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Stagger children animations */
+  .stagger-children > * {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+  .stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+  .stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+  .stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+  .stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+  .stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
 }
