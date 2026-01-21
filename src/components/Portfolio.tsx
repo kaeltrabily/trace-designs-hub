@@ -20,7 +20,7 @@ const Portfolio = () => {
         {/* Portfolio iframe */}
         <div className="relative rounded-2xl overflow-hidden shadow-elevated bg-card">
           <iframe
-            src={portfolioUrl}
+            src="https://www.canva.com/design/DAGSCUrTrJk/KTtNROq-mw4sTpsnpeYAEQ/view?embed"
             title="Trace Designs Portfolio"
             className="w-full h-[500px] md:h-[600px] lg:h-[700px] border-0"
             loading="lazy"
@@ -32,7 +32,7 @@ const Portfolio = () => {
         {/* CTA Button */}
         <div className="flex justify-center mt-8">
           <a
-            href="https://www.canva.com/design/DAGSCUrTrJk/KTtNROq-mw4sTpsnpeYAEQ/view?embed"
+            href={portfolioUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-hero rounded-lg inline-flex items-center gap-2"
