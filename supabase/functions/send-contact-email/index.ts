@@ -65,7 +65,7 @@ const handler = async (req: Request): Promise<Response> => {
           "Authorization": `Bearer ${resendApiKey}`,
         },
         body: JSON.stringify({
-          from: "Trace Designs <onboarding@resend.dev>",
+          from: "Noti@Trace-Designs.online",
           to: ["Contact-Us@Trace-Designs.online"],
           subject: `New Contact Form Submission from ${name}`,
           html: `
