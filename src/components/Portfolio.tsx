@@ -18,7 +18,7 @@ const Portfolio = () => {
         </div>
 
         {/* Portfolio iframe */}
-        <div className="relative rounded-2xl overflow-hidden shadow-elevated bg-card aspect-[16/9]">
+        <div className="relative rounded-2xl overflow-hidden shadow-elevated bg-card aspect-[29.7/21]">
           <iframe
             src="https://www.canva.com/design/DAGSCUrTrJk/KTtNROq-mw4sTpsnpeYAEQ/view?embed"
             title="Trace Designs Portfolio"
@@ -26,8 +26,6 @@ const Portfolio = () => {
             loading="lazy"
             allowFullScreen
           />
-          {/* Gradient overlay at bottom */}
-          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-card to-transparent pointer-events-none" />
         </div>
 
         {/* CTA Button */}
