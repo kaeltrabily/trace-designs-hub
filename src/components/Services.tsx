@@ -4,9 +4,9 @@ import interior01 from '@/assets/interior-01.jpg';
 import interior02 from '@/assets/interior-02.jpg';
 import interior03 from '@/assets/interior-03.jpg';
 import interior05 from '@/assets/interior-05.jpg';
-import interior06 from '@/assets/interior-06.jpg';
 import structureDesign from '@/assets/structure-design.gif';
 import footingsSchedule from '@/assets/footings-schedule.gif';
+import quantitySurvey from '@/assets/quantity-survey.gif';
 
 const Services = () => {
   const { t, language } = useLanguage();
@@ -164,39 +164,53 @@ const Services = () => {
         </div>
       </div>
 
-      {/* Quantity Survey - Dark with Accent */}
-      <div className="relative min-h-[70vh] bg-[#1a1a1a] overflow-hidden">
-        {/* Decorative Elements */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/10" />
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      {/* Quantity Survey - Light with GIF showcase */}
+      <div className="relative min-h-[80vh] bg-background overflow-hidden">
+        {/* Decorative Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 via-background to-primary/5" />
+        <div className="absolute top-20 right-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-secondary/30 rounded-full blur-3xl" />
         
-        <div className={`relative z-10 container mx-auto px-4 py-20 flex flex-col lg:flex-row items-center gap-12 min-h-[70vh] ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
+        <div className={`relative z-10 container mx-auto px-4 py-20 flex flex-col lg:flex-row items-center gap-16 min-h-[80vh] ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
           {/* Content */}
-          <div className="lg:w-1/2">
+          <div className="lg:w-2/5">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center">
+              <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center shadow-lg">
                 <Calculator className="w-8 h-8 text-primary-foreground" />
               </div>
               <span className="text-primary font-medium tracking-widest uppercase text-sm">04</span>
             </div>
-            <h3 className="text-4xl md:text-5xl font-serif text-white mb-6 leading-tight">
+            <h3 className="text-4xl md:text-5xl font-serif text-foreground mb-6 leading-tight">
               {t('services.quantity.title')}
             </h3>
-            <p className="text-gray-300 text-lg leading-relaxed mb-8">
+            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
               {t('services.quantity.description')}
             </p>
-            <p className="text-primary font-medium">
-              {t('services.quantity.deliverables')}
-            </p>
+            <div className="p-4 bg-card rounded-xl border border-border shadow-sm">
+              <p className="text-primary font-medium">
+                {t('services.quantity.deliverables')}
+              </p>
+            </div>
           </div>
           
-          {/* Image */}
-          <div className="lg:w-1/2 flex justify-center">
-            <div className="relative">
-              <div className="absolute -inset-4 bg-primary/20 rounded-3xl blur-xl" />
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-primary/30">
-                <img src={interior06} alt="Quantity Survey" className="w-full max-w-md h-auto object-cover" />
+          {/* GIF Showcase */}
+          <div className="lg:w-3/5 flex justify-center">
+            <div className="relative w-full max-w-2xl">
+              {/* Glow effect behind */}
+              <div className="absolute -inset-6 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 rounded-3xl blur-2xl" />
+              
+              {/* Main GIF container */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
+                <img 
+                  src={quantitySurvey} 
+                  alt="Quantity Survey Process" 
+                  className="w-full h-auto object-contain"
+                />
               </div>
+              
+              {/* Corner accent */}
+              <div className="absolute -bottom-3 -right-3 w-24 h-24 bg-primary/20 rounded-xl -z-10" />
+              <div className="absolute -top-3 -left-3 w-16 h-16 bg-secondary/40 rounded-lg -z-10" />
             </div>
           </div>
         </div>
