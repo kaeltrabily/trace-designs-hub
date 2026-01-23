@@ -1,4 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Palette, Building, FileText, Calculator } from 'lucide-react';
 import interior01 from '@/assets/interior-01.jpg';
 import interior02 from '@/assets/interior-02.jpg';
 import interior03 from '@/assets/interior-03.jpg';
@@ -12,116 +13,189 @@ const Services = () => {
   const isRTL = language === 'ar';
 
   return (
-    <section id="services">
-      {/* Interior Design Section - Dark Background */}
-      <div className="bg-[#1a1a1a] py-16 px-4">
-        <div className="container mx-auto">
-          <h2 className="text-4xl md:text-5xl font-serif text-white text-center mb-12">
+    <section id="services" className="overflow-hidden">
+      {/* Section Header */}
+      <div className="bg-background py-16 px-4">
+        <div className="container mx-auto text-center">
+          <div className="flex justify-center mb-4">
+            <div className="gold-line" />
+          </div>
+          <h2 className="text-4xl md:text-6xl font-serif text-foreground mb-4">
             {t('services.title')}
           </h2>
-          
-          <div className={`flex flex-col md:flex-row gap-8 mb-12 ${isRTL ? 'md:flex-row-reverse' : ''}`}>
-            <div className="md:w-1/3">
-              <h3 className="text-2xl md:text-3xl font-serif text-white mb-4">
-                {t('services.interior.title')}
-              </h3>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            {t('services.subtitle')}
+          </p>
+        </div>
+      </div>
+
+      {/* Interior Design - Full Width Dark */}
+      <div className="relative min-h-[80vh] bg-[#1a1a1a] overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0">
+          <img 
+            src={interior05} 
+            alt="Interior Design" 
+            className="w-full h-full object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a] via-[#1a1a1a]/80 to-transparent" />
+        </div>
+        
+        {/* Content */}
+        <div className={`relative z-10 container mx-auto px-4 py-20 flex flex-col justify-center min-h-[80vh] ${isRTL ? 'items-end text-right' : 'items-start text-left'}`}>
+          <div className="max-w-xl">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center">
+                <Palette className="w-8 h-8 text-primary-foreground" />
+              </div>
+              <span className="text-primary font-medium tracking-widest uppercase text-sm">01</span>
             </div>
-            <div className="md:w-2/3">
-              <p className="text-gray-300 leading-relaxed">
-                {t('services.interior.description')}
-              </p>
+            <h3 className="text-4xl md:text-5xl font-serif text-white mb-6 leading-tight">
+              {t('services.interior.title')}
+            </h3>
+            <p className="text-gray-300 text-lg leading-relaxed mb-8">
+              {t('services.interior.description')}
+            </p>
+            <p className="text-primary font-medium">
+              {t('services.interior.deliverables')}
+            </p>
+          </div>
+        </div>
+
+        {/* Floating Images */}
+        <div className="absolute bottom-8 right-8 hidden lg:flex gap-4">
+          <div className="w-32 h-40 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+            <img src={interior01} alt="" className="w-full h-full object-cover" />
+          </div>
+          <div className="w-32 h-40 rounded-lg overflow-hidden shadow-2xl transform translate-y-8 hover:scale-105 transition-transform duration-300">
+            <img src={interior02} alt="" className="w-full h-full object-cover" />
+          </div>
+        </div>
+      </div>
+
+      {/* Structural Design - Split Layout */}
+      <div className="relative min-h-[80vh] bg-background">
+        <div className={`flex flex-col lg:flex-row min-h-[80vh] ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
+          {/* Image Side */}
+          <div className="lg:w-1/2 relative overflow-hidden">
+            <img 
+              src={structureDesign} 
+              alt="Structural Design" 
+              className="w-full h-64 lg:h-full object-cover"
+            />
+            {/* Overlapping secondary image */}
+            <div className="absolute bottom-8 right-8 w-48 h-64 rounded-lg overflow-hidden shadow-2xl hidden lg:block border-4 border-background">
+              <img src={footingsSchedule} alt="Footings Schedule" className="w-full h-full object-cover bg-white" />
             </div>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="aspect-square overflow-hidden rounded-lg">
-              <img src={interior01} alt="Interior Design 1" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
-            </div>
-            <div className="aspect-square overflow-hidden rounded-lg">
-              <img src={interior02} alt="Interior Design 2" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
-            </div>
-            <div className="aspect-square overflow-hidden rounded-lg">
-              <img src={interior05} alt="Interior Design 3" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
-            </div>
-            <div className="aspect-square overflow-hidden rounded-lg">
-              <img src={interior03} alt="Interior Design 4" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
+          {/* Content Side */}
+          <div className={`lg:w-1/2 flex items-center ${isRTL ? 'lg:pr-20' : 'lg:pl-20'} px-4 py-16 lg:py-0`}>
+            <div className="max-w-lg">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center">
+                  <Building className="w-8 h-8 text-primary-foreground" />
+                </div>
+                <span className="text-primary font-medium tracking-widest uppercase text-sm">02</span>
+              </div>
+              <h3 className="text-4xl md:text-5xl font-serif text-foreground mb-6 leading-tight">
+                {t('services.structural.title')}
+              </h3>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+                {t('services.structural.description')}
+              </p>
+              <p className="text-primary font-medium">
+                {t('services.structural.deliverables')}
+              </p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Shop Drawing Section - Diagonal Light Background */}
-      <div className="relative py-20 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary/50 via-background to-primary/10 -skew-y-3 scale-110" />
-        <div className="container mx-auto relative z-10">
-          <div className={`flex flex-col md:flex-row gap-8 items-center ${isRTL ? 'md:flex-row-reverse' : ''}`}>
-            <div className="md:w-1/3">
-              <h3 className="text-3xl md:text-4xl font-serif text-foreground mb-6">
-                {t('services.shop.title')}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {t('services.shop.description')}
-              </p>
+      {/* Shop Drawings - Angled Background */}
+      <div className="relative min-h-[80vh] overflow-hidden">
+        {/* Angled Background */}
+        <div className="absolute inset-0 bg-secondary/30" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
+        
+        {/* Decorative Angle */}
+        <div className="absolute top-0 left-0 w-full h-32 bg-background" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 100%)' }} />
+        <div className="absolute bottom-0 left-0 w-full h-32 bg-background" style={{ clipPath: 'polygon(0 100%, 100% 0, 100% 100%, 0 100%)' }} />
+        
+        <div className={`relative z-10 container mx-auto px-4 py-32 flex flex-col lg:flex-row items-center gap-12 ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
+          {/* Content */}
+          <div className="lg:w-1/2">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center">
+                <FileText className="w-8 h-8 text-primary-foreground" />
+              </div>
+              <span className="text-primary font-medium tracking-widest uppercase text-sm">03</span>
             </div>
-            <div className="md:w-2/3">
-              <div className="grid grid-cols-3 gap-3">
-                <div className="col-span-2 row-span-2 overflow-hidden rounded-lg">
-                  <img src={interior03} alt="Shop Drawing 1" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-                </div>
-                <div className="overflow-hidden rounded-lg">
-                  <img src={interior05} alt="Shop Drawing 2" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-                </div>
-                <div className="overflow-hidden rounded-lg">
-                  <img src={interior06} alt="Shop Drawing 3" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-                </div>
+            <h3 className="text-4xl md:text-5xl font-serif text-foreground mb-6 leading-tight">
+              {t('services.shop.title')}
+            </h3>
+            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+              {t('services.shop.description')}
+            </p>
+            <p className="text-primary font-medium">
+              {t('services.shop.deliverables')}
+            </p>
+          </div>
+          
+          {/* Images Grid */}
+          <div className="lg:w-1/2 grid grid-cols-2 gap-4">
+            <div className="space-y-4">
+              <div className="rounded-2xl overflow-hidden shadow-xl hover:scale-[1.02] transition-transform duration-300">
+                <img src={interior03} alt="" className="w-full h-48 object-cover" />
+              </div>
+              <div className="rounded-2xl overflow-hidden shadow-xl hover:scale-[1.02] transition-transform duration-300">
+                <img src={interior01} alt="" className="w-full h-32 object-cover" />
+              </div>
+            </div>
+            <div className="space-y-4 pt-8">
+              <div className="rounded-2xl overflow-hidden shadow-xl hover:scale-[1.02] transition-transform duration-300">
+                <img src={interior02} alt="" className="w-full h-32 object-cover" />
+              </div>
+              <div className="rounded-2xl overflow-hidden shadow-xl hover:scale-[1.02] transition-transform duration-300">
+                <img src={interior05} alt="" className="w-full h-48 object-cover" />
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Structural Design Section - Light Background */}
-      <div className="bg-background py-20 px-4">
-        <div className="container mx-auto">
-          <div className={`flex flex-col md:flex-row gap-8 mb-12 ${isRTL ? 'md:flex-row-reverse' : ''}`}>
-            <div className="md:w-1/3">
-              <h3 className="text-3xl md:text-4xl font-serif text-foreground leading-tight">
-                {t('services.structural.title')}
-              </h3>
+      {/* Quantity Survey - Dark with Accent */}
+      <div className="relative min-h-[70vh] bg-[#1a1a1a] overflow-hidden">
+        {/* Decorative Elements */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/10" />
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        
+        <div className={`relative z-10 container mx-auto px-4 py-20 flex flex-col lg:flex-row items-center gap-12 min-h-[70vh] ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
+          {/* Content */}
+          <div className="lg:w-1/2">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center">
+                <Calculator className="w-8 h-8 text-primary-foreground" />
+              </div>
+              <span className="text-primary font-medium tracking-widest uppercase text-sm">04</span>
             </div>
-            <div className="md:w-2/3">
-              <p className="text-muted-foreground leading-relaxed">
-                {t('services.structural.description')}
-              </p>
-            </div>
+            <h3 className="text-4xl md:text-5xl font-serif text-white mb-6 leading-tight">
+              {t('services.quantity.title')}
+            </h3>
+            <p className="text-gray-300 text-lg leading-relaxed mb-8">
+              {t('services.quantity.description')}
+            </p>
+            <p className="text-primary font-medium">
+              {t('services.quantity.deliverables')}
+            </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="overflow-hidden rounded-lg shadow-lg">
-              <img src={structureDesign} alt="Structural Design" className="w-full h-64 md:h-80 object-cover" />
-            </div>
-            <div className="overflow-hidden rounded-lg shadow-lg">
-              <img src={footingsSchedule} alt="Footings Schedule" className="w-full h-64 md:h-80 object-cover bg-white" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Quantity Survey Section - Light Background */}
-      <div className="bg-secondary/20 py-20 px-4">
-        <div className="container mx-auto">
-          <div className={`flex flex-col md:flex-row gap-8 items-center ${isRTL ? 'md:flex-row-reverse' : ''}`}>
-            <div className="md:w-1/2">
-              <h3 className="text-3xl md:text-4xl font-serif text-foreground mb-6">
-                {t('services.quantity.title')}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {t('services.quantity.description')}
-              </p>
-            </div>
-            <div className="md:w-1/2">
-              <div className="overflow-hidden rounded-lg shadow-lg bg-card">
-                <img src={interior06} alt="Quantity Survey" className="w-full h-64 md:h-80 object-cover" />
+          {/* Image */}
+          <div className="lg:w-1/2 flex justify-center">
+            <div className="relative">
+              <div className="absolute -inset-4 bg-primary/20 rounded-3xl blur-xl" />
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-primary/30">
+                <img src={interior06} alt="Quantity Survey" className="w-full max-w-md h-auto object-cover" />
               </div>
             </div>
           </div>
