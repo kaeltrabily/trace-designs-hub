@@ -173,7 +173,7 @@ const Services = () => {
         
         <div className={`relative z-10 container mx-auto px-4 py-20 flex flex-col lg:flex-row items-center gap-16 min-h-[80vh] ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
           {/* Content */}
-          <div className="lg:w-2/5">
+          <div className="lg:w-1/2">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center shadow-lg">
                 <Calculator className="w-8 h-8 text-primary-foreground" />
@@ -194,8 +194,8 @@ const Services = () => {
           </div>
           
           {/* GIF Showcase */}
-          <div className="lg:w-3/5 flex justify-center">
-            <div className="relative w-full max-w-2xl">
+          <div className="lg:w-1/2 flex justify-center">
+            <div className="relative w-full max-w-md">
               {/* Glow effect behind */}
               <div className="absolute -inset-6 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 rounded-3xl blur-2xl" />
               
