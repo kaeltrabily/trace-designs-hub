@@ -5,6 +5,7 @@ import interior03 from '@/assets/interior-03.jpg';
 import interior05 from '@/assets/interior-05.jpg';
 import interior06 from '@/assets/interior-06.jpg';
 import structureDesign from '@/assets/structure-design.gif';
+import footingsSchedule from '@/assets/footings-schedule.gif';
 
 const Services = () => {
   const { t, language } = useLanguage();
@@ -99,12 +100,8 @@ const Services = () => {
             <div className="overflow-hidden rounded-lg shadow-lg">
               <img src={structureDesign} alt="Structural Design" className="w-full h-64 md:h-80 object-cover" />
             </div>
-            <div className="overflow-hidden rounded-lg shadow-lg bg-card p-4">
-              <div className="h-64 md:h-80 flex items-center justify-center">
-                <p className="text-sm text-muted-foreground text-center px-4">
-                  {t('services.structural.deliverables')}
-                </p>
-              </div>
+            <div className="overflow-hidden rounded-lg shadow-lg">
+              <img src={footingsSchedule} alt="Footings Schedule" className="w-full h-64 md:h-80 object-cover bg-white" />
             </div>
           </div>
         </div>
