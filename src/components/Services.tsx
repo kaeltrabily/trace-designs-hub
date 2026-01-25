@@ -2,10 +2,10 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Palette, Building, FileText, Calculator } from 'lucide-react';
 import interior01 from '@/assets/interior-01.jpg';
 import interior02 from '@/assets/interior-02.jpg';
-import interior03 from '@/assets/interior-03.jpg';
 import interior05 from '@/assets/interior-05.jpg';
 import structureDesign from '@/assets/structure-design.gif';
 import footingsSchedule from '@/assets/footings-schedule.gif';
+import shopDrawing from '@/assets/shop-drawing.gif';
 import quantitySurvey from '@/assets/quantity-survey.gif';
 
 const Services = () => {
@@ -112,103 +112,95 @@ const Services = () => {
         </div>
       </div>
 
-      {/* Shop Drawings - Angled Background */}
-      <div className="relative min-h-[80vh] overflow-hidden">
-        {/* Angled Background */}
-        <div className="absolute inset-0 bg-secondary/30" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
-        
-        {/* Decorative Angle */}
-        <div className="absolute top-0 left-0 w-full h-32 bg-background" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 100%)' }} />
-        <div className="absolute bottom-0 left-0 w-full h-32 bg-background" style={{ clipPath: 'polygon(0 100%, 100% 0, 100% 100%, 0 100%)' }} />
-        
-        <div className={`relative z-10 container mx-auto px-4 py-32 flex flex-col lg:flex-row items-center gap-12 ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
-          {/* Content */}
-          <div className="lg:w-1/2">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center">
-                <FileText className="w-8 h-8 text-primary-foreground" />
-              </div>
-              <span className="text-primary font-medium tracking-widest uppercase text-sm">03</span>
-            </div>
-            <h3 className="text-4xl md:text-5xl font-serif text-foreground mb-6 leading-tight">
-              {t('services.shop.title')}
-            </h3>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              {t('services.shop.description')}
-            </p>
-            <p className="text-primary font-medium">
-              {t('services.shop.deliverables')}
-            </p>
-          </div>
-          
-          {/* Images Grid */}
-          <div className="lg:w-1/2 grid grid-cols-2 gap-4">
-            <div className="space-y-4">
-              <div className="rounded-2xl overflow-hidden shadow-xl hover:scale-[1.02] transition-transform duration-300">
-                <img src={interior03} alt="" className="w-full h-48 object-cover" />
-              </div>
-              <div className="rounded-2xl overflow-hidden shadow-xl hover:scale-[1.02] transition-transform duration-300">
-                <img src={interior01} alt="" className="w-full h-32 object-cover" />
-              </div>
-            </div>
-            <div className="space-y-4 pt-8">
-              <div className="rounded-2xl overflow-hidden shadow-xl hover:scale-[1.02] transition-transform duration-300">
-                <img src={interior02} alt="" className="w-full h-32 object-cover" />
-              </div>
-              <div className="rounded-2xl overflow-hidden shadow-xl hover:scale-[1.02] transition-transform duration-300">
-                <img src={interior05} alt="" className="w-full h-48 object-cover" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Quantity Survey - Minimal & Centered */}
-      <div className="relative min-h-[80vh] bg-background overflow-hidden flex items-center">
-        {/* Subtle background accent */}
-        <div className="absolute inset-0 bg-gradient-to-b from-secondary/10 via-background to-background" />
+      {/* Shop Drawings & Quantity Survey - Combined Section */}
+      <div className="relative min-h-[80vh] bg-background overflow-hidden">
+        {/* Subtle background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 via-background to-secondary/10" />
         
         <div className="relative z-10 container mx-auto px-4 py-20">
-          {/* Centered Content */}
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <span className="text-primary font-medium tracking-widest uppercase text-sm">04</span>
-              <div className="w-12 h-px bg-primary/40" />
-              <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center">
-                <Calculator className="w-7 h-7 text-primary-foreground" />
-              </div>
-              <div className="w-12 h-px bg-primary/40" />
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="flex justify-center mb-4">
+              <div className="gold-line" />
             </div>
-            
-            <h3 className="text-4xl md:text-5xl font-serif text-foreground mb-6 leading-tight">
-              {t('services.quantity.title')}
+            <h3 className="text-3xl md:text-4xl font-serif text-foreground mb-4">
+              {t('services.technicalTitle') || 'Technical Services'}
             </h3>
-            
-            <p className="text-muted-foreground text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
-              {t('services.quantity.description')}
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              {t('services.technicalSubtitle') || 'Precision documentation and accurate cost estimation'}
             </p>
           </div>
           
-          {/* GIF Showcase - Centered */}
-          <div className="flex justify-center mb-10">
-            <div className="relative w-full max-w-sm">
-              <div className="rounded-2xl overflow-hidden shadow-lg border border-border bg-card">
-                <img 
-                  src={quantitySurvey} 
-                  alt="Quantity Survey Process" 
-                  className="w-full h-auto object-contain"
-                />
+          {/* Two Services Grid */}
+          <div className={`grid md:grid-cols-2 gap-12 lg:gap-16 ${isRTL ? 'direction-rtl' : ''}`}>
+            {/* Shop Drawings */}
+            <div className="flex flex-col items-center text-center">
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <span className="text-primary font-medium tracking-widest uppercase text-sm">03</span>
+                <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center">
+                  <FileText className="w-6 h-6 text-primary-foreground" />
+                </div>
+              </div>
+              
+              <h4 className="text-2xl md:text-3xl font-serif text-foreground mb-4">
+                {t('services.shop.title')}
+              </h4>
+              
+              <p className="text-muted-foreground leading-relaxed mb-6 max-w-sm">
+                {t('services.shop.description')}
+              </p>
+              
+              {/* GIF */}
+              <div className="w-full max-w-xs mb-6">
+                <div className="rounded-xl overflow-hidden shadow-lg border border-border bg-card">
+                  <img 
+                    src={shopDrawing} 
+                    alt="Shop Drawing Process" 
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+              </div>
+              
+              <div className="inline-block px-4 py-2 bg-secondary/40 rounded-full border border-border/50">
+                <p className="text-primary font-medium text-sm">
+                  {t('services.shop.deliverables')}
+                </p>
               </div>
             </div>
-          </div>
-          
-          {/* Deliverables - Centered */}
-          <div className="flex justify-center">
-            <div className="inline-block px-6 py-3 bg-secondary/30 rounded-full border border-border/50">
-              <p className="text-primary font-medium text-sm">
-                {t('services.quantity.deliverables')}
+            
+            {/* Quantity Survey */}
+            <div className="flex flex-col items-center text-center">
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <span className="text-primary font-medium tracking-widest uppercase text-sm">04</span>
+                <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center">
+                  <Calculator className="w-6 h-6 text-primary-foreground" />
+                </div>
+              </div>
+              
+              <h4 className="text-2xl md:text-3xl font-serif text-foreground mb-4">
+                {t('services.quantity.title')}
+              </h4>
+              
+              <p className="text-muted-foreground leading-relaxed mb-6 max-w-sm">
+                {t('services.quantity.description')}
               </p>
+              
+              {/* GIF */}
+              <div className="w-full max-w-xs mb-6">
+                <div className="rounded-xl overflow-hidden shadow-lg border border-border bg-card">
+                  <img 
+                    src={quantitySurvey} 
+                    alt="Quantity Survey Process" 
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+              </div>
+              
+              <div className="inline-block px-4 py-2 bg-secondary/40 rounded-full border border-border/50">
+                <p className="text-primary font-medium text-sm">
+                  {t('services.quantity.deliverables')}
+                </p>
+              </div>
             </div>
           </div>
         </div>
