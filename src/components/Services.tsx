@@ -139,11 +139,11 @@ const Services = () => {
               
               {/* GIF */}
               <div className="w-full max-w-xs mb-6">
-                <div className="rounded-xl overflow-hidden shadow-lg border border-border bg-card">
+                <div className="rounded-xl overflow-hidden shadow-lg border border-border bg-card" style={{ aspectRatio: '0.9' }}>
                   <img 
                     src={shopDrawing} 
                     alt="Shop Drawing Process" 
-                    className="w-full h-auto object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>
@@ -173,12 +173,12 @@ const Services = () => {
               </p>
               
               {/* GIF */}
-              <div className="w-full max-w-xs mb-6 flex-grow flex items-center">
-                <div className="rounded-xl overflow-hidden shadow-lg border border-border bg-card w-full">
+              <div className="w-full max-w-xs mb-6">
+                <div className="rounded-xl overflow-hidden shadow-lg border border-border bg-card w-full" style={{ aspectRatio: '0.9' }}>
                   <img 
                     src={quantitySurvey} 
                     alt="Quantity Survey Process" 
-                    className="w-full h-auto object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>
