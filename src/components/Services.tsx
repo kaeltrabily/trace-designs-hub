@@ -113,28 +113,15 @@ const Services = () => {
       </div>
 
       {/* Shop Drawings & Quantity Survey - Combined Section */}
-      <div className="relative min-h-[80vh] bg-background overflow-hidden">
+      <div className="relative min-h-[80vh] bg-background overflow-hidden flex items-center">
         {/* Subtle background */}
         <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 via-background to-secondary/10" />
         
         <div className="relative z-10 container mx-auto px-4 py-20">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <div className="flex justify-center mb-4">
-              <div className="gold-line" />
-            </div>
-            <h3 className="text-3xl md:text-4xl font-serif text-foreground mb-4">
-              {t('services.technicalTitle') || 'Technical Services'}
-            </h3>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              {t('services.technicalSubtitle') || 'Precision documentation and accurate cost estimation'}
-            </p>
-          </div>
-          
           {/* Two Services Grid */}
           <div className={`grid md:grid-cols-2 gap-12 lg:gap-16 ${isRTL ? 'direction-rtl' : ''}`}>
             {/* Shop Drawings */}
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col items-center text-center h-full">
               <div className="flex items-center justify-center gap-3 mb-6">
                 <span className="text-primary font-medium tracking-widest uppercase text-sm">03</span>
                 <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center">
@@ -169,7 +156,7 @@ const Services = () => {
             </div>
             
             {/* Quantity Survey */}
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col items-center text-center h-full">
               <div className="flex items-center justify-center gap-3 mb-6">
                 <span className="text-primary font-medium tracking-widest uppercase text-sm">04</span>
                 <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center">
