@@ -164,53 +164,51 @@ const Services = () => {
         </div>
       </div>
 
-      {/* Quantity Survey - Light with GIF showcase */}
-      <div className="relative min-h-[80vh] bg-background overflow-hidden">
-        {/* Decorative Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 via-background to-primary/5" />
-        <div className="absolute top-20 right-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-secondary/30 rounded-full blur-3xl" />
+      {/* Quantity Survey - Minimal & Centered */}
+      <div className="relative min-h-[80vh] bg-background overflow-hidden flex items-center">
+        {/* Subtle background accent */}
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary/10 via-background to-background" />
         
-        <div className={`relative z-10 container mx-auto px-4 py-20 flex flex-col lg:flex-row items-center gap-16 min-h-[80vh] ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
-          {/* Content */}
-          <div className="lg:w-1/2">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center shadow-lg">
-                <Calculator className="w-8 h-8 text-primary-foreground" />
-              </div>
+        <div className="relative z-10 container mx-auto px-4 py-20">
+          {/* Centered Content */}
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="flex items-center justify-center gap-4 mb-8">
               <span className="text-primary font-medium tracking-widest uppercase text-sm">04</span>
+              <div className="w-12 h-px bg-primary/40" />
+              <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center">
+                <Calculator className="w-7 h-7 text-primary-foreground" />
+              </div>
+              <div className="w-12 h-px bg-primary/40" />
             </div>
+            
             <h3 className="text-4xl md:text-5xl font-serif text-foreground mb-6 leading-tight">
               {t('services.quantity.title')}
             </h3>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+            
+            <p className="text-muted-foreground text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
               {t('services.quantity.description')}
             </p>
-            <div className="p-4 bg-card rounded-xl border border-border shadow-sm">
-              <p className="text-primary font-medium">
-                {t('services.quantity.deliverables')}
-              </p>
-            </div>
           </div>
           
-          {/* GIF Showcase */}
-          <div className="lg:w-1/2 flex justify-center">
-            <div className="relative w-full max-w-md">
-              {/* Glow effect behind */}
-              <div className="absolute -inset-6 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 rounded-3xl blur-2xl" />
-              
-              {/* Main GIF container */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
+          {/* GIF Showcase - Centered */}
+          <div className="flex justify-center mb-10">
+            <div className="relative w-full max-w-sm">
+              <div className="rounded-2xl overflow-hidden shadow-lg border border-border bg-card">
                 <img 
                   src={quantitySurvey} 
                   alt="Quantity Survey Process" 
                   className="w-full h-auto object-contain"
                 />
               </div>
-              
-              {/* Corner accent */}
-              <div className="absolute -bottom-3 -right-3 w-24 h-24 bg-primary/20 rounded-xl -z-10" />
-              <div className="absolute -top-3 -left-3 w-16 h-16 bg-secondary/40 rounded-lg -z-10" />
+            </div>
+          </div>
+          
+          {/* Deliverables - Centered */}
+          <div className="flex justify-center">
+            <div className="inline-block px-6 py-3 bg-secondary/30 rounded-full border border-border/50">
+              <p className="text-primary font-medium text-sm">
+                {t('services.quantity.deliverables')}
+              </p>
             </div>
           </div>
         </div>
