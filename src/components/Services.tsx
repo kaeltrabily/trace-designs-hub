@@ -139,11 +139,11 @@ const Services = () => {
               
               {/* GIF */}
               <div className="w-full max-w-xs mb-6">
-                <div className="rounded-xl overflow-hidden shadow-lg border border-border bg-card">
+                <div className="rounded-xl overflow-hidden shadow-lg border border-border bg-card h-48">
                   <img 
                     src={shopDrawing} 
                     alt="Shop Drawing Process" 
-                    className="w-full h-auto object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>
@@ -174,11 +174,11 @@ const Services = () => {
               
               {/* GIF */}
               <div className="w-full max-w-xs mb-6">
-                <div className="rounded-xl overflow-hidden shadow-lg border border-border bg-card">
+                <div className="rounded-xl overflow-hidden shadow-lg border border-border bg-card h-48">
                   <img 
                     src={quantitySurvey} 
                     alt="Quantity Survey Process" 
-                    className="w-full h-auto object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>
