@@ -154,11 +154,38 @@ const translations = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+// Cookie utility functions
+const setCookie = (name: string, value: string, days: number = 365) => {
+  const expires = new Date();
+  expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+  document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=Lax`;
+};
+
+const getCookie = (name: string): string | null => {
+  const nameEQ = `${name}=`;
+  const cookies = document.cookie.split(';');
+  for (let cookie of cookies) {
+    cookie = cookie.trim();
+    if (cookie.indexOf(nameEQ) === 0) {
+      return cookie.substring(nameEQ.length);
+    }
+  }
+  return null;
+};
+
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>(() => {
+    // Initialize from cookie or default to 'en'
+    const savedLanguage = getCookie('preferred_language');
+    return (savedLanguage === 'ar' || savedLanguage === 'en') ? savedLanguage : 'en';
+  });
 
   const toggleLanguage = useCallback(() => {
-    setLanguage((prev) => (prev === 'en' ? 'ar' : 'en'));
+    setLanguage((prev) => {
+      const newLang = prev === 'en' ? 'ar' : 'en';
+      setCookie('preferred_language', newLang);
+      return newLang;
+    });
   }, []);
 
   const t = useCallback(
