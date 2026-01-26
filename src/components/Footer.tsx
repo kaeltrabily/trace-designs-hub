@@ -10,7 +10,7 @@ const Footer = () => {
     { icon: Instagram, href: '#', label: 'Instagram' },
     { icon: Facebook, href: '#', label: 'Facebook' },
     { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Linkedin, href: 'linkedin.trace-designs.online', label: 'LinkedIn' },
+    { icon: Linkedin, href: 'http://linkedin.trace-designs.online', label: 'LinkedIn' },
   ];
 
   const scrollToSection = (href: string) => {
