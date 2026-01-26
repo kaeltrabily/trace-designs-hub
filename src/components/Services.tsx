@@ -14,13 +14,13 @@ import structureDesign from '@/assets/structure-design.gif';
 import footingsSchedule from '@/assets/footings-schedule.gif';
 import shopDrawing from '@/assets/shop-drawing.gif';
 import quantitySurvey from '@/assets/quantity-survey.gif';
-
 const Services = () => {
-  const { t, language } = useLanguage();
+  const {
+    t,
+    language
+  } = useLanguage();
   const isRTL = language === 'ar';
-
-  return (
-    <section id="services" className="overflow-hidden">
+  return <section id="services" className="overflow-hidden">
       {/* Section Header */}
       <div className="bg-background py-16 px-4">
         <div className="container mx-auto text-center">
@@ -40,11 +40,7 @@ const Services = () => {
       <div className="relative min-h-[80vh] bg-[#1a1a1a] overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
-          <img 
-            src={interior05} 
-            alt="Interior Design" 
-            className="w-full h-full object-cover opacity-40"
-          />
+          <img src={interior05} alt="Interior Design" className="w-full h-full object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a] via-[#1a1a1a]/80 to-transparent" />
         </div>
         
@@ -63,7 +59,7 @@ const Services = () => {
             <p className="text-gray-300 text-lg leading-relaxed mb-8">
               {t('services.interior.description')}
             </p>
-            <p className="text-primary font-medium">
+            <p className="font-medium text-gray-300">
               {t('services.interior.deliverables')}
             </p>
           </div>
@@ -123,11 +119,7 @@ const Services = () => {
         <div className={`flex flex-col lg:flex-row min-h-[80vh] ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
           {/* Image Side */}
           <div className="lg:w-1/2 relative overflow-hidden">
-            <img 
-              src={structureDesign} 
-              alt="Structural Design" 
-              className="w-full h-64 lg:h-full object-cover"
-            />
+            <img src={structureDesign} alt="Structural Design" className="w-full h-64 lg:h-full object-cover" />
             {/* Overlapping secondary image */}
             <div className="absolute bottom-8 right-8 w-48 h-64 rounded-lg overflow-hidden shadow-2xl hidden lg:block border-4 border-background">
               <img src={footingsSchedule} alt="Footings Schedule" className="w-full h-full object-cover bg-white" />
@@ -184,12 +176,10 @@ const Services = () => {
               
               {/* GIF */}
               <div className="w-full max-w-xs mb-6">
-                <div className="rounded-xl overflow-hidden shadow-lg border border-border bg-card" style={{ aspectRatio: '0.9' }}>
-                  <img 
-                    src={shopDrawing} 
-                    alt="Shop Drawing Process" 
-                    className="w-full h-full object-cover"
-                  />
+                <div className="rounded-xl overflow-hidden shadow-lg border border-border bg-card" style={{
+                aspectRatio: '0.9'
+              }}>
+                  <img src={shopDrawing} alt="Shop Drawing Process" className="w-full h-full object-cover" />
                 </div>
               </div>
               
@@ -219,12 +209,10 @@ const Services = () => {
               
               {/* GIF */}
               <div className="w-full max-w-xs mb-6">
-                <div className="rounded-xl overflow-hidden shadow-lg border border-border bg-card w-full" style={{ aspectRatio: '0.9' }}>
-                  <img 
-                    src={quantitySurvey} 
-                    alt="Quantity Survey Process" 
-                    className="w-full h-full object-cover"
-                  />
+                <div className="rounded-xl overflow-hidden shadow-lg border border-border bg-card w-full" style={{
+                aspectRatio: '0.9'
+              }}>
+                  <img src={quantitySurvey} alt="Quantity Survey Process" className="w-full h-full object-cover" />
                 </div>
               </div>
               
@@ -237,8 +225,6 @@ const Services = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Services;
