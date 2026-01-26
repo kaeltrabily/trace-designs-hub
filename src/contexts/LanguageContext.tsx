@@ -21,7 +21,7 @@ const translations = {
     // Hero
     'hero.title': 'Trace Designs',
     'hero.subtitle': 'Building Lasting Trace',
-    'hero.description': 'Transforming spaces with innovative interior design, structural engineering, and comprehensive construction solutions.',
+    'hero.description': 'Delivers integrated engineering and design solutions that turn ideas into efficient, buildable realities.',
     'hero.cta': 'Get a Quote',
     'hero.cta.secondary': 'View Our Work',
     
@@ -87,7 +87,7 @@ const translations = {
     // Hero
     'hero.title': 'تريس ديزاينز',
     'hero.subtitle': 'نبني أثراً يدوم',
-    'hero.description': 'نحول المساحات من خلال التصميم الداخلي المبتكر والهندسة الإنشائية وحلول البناء الشاملة.',
+    'hero.description': 'تقدم حلول تصميم وهندسة متكاملة تحوّل الأفكار إلى واقع عملي قابل للتنفيذ.',
     'hero.cta': 'احصل على عرض سعر',
     'hero.cta.secondary': 'شاهد أعمالنا',
     
