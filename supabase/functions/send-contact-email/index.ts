@@ -57,30 +57,47 @@ const handler = async (req: Request): Promise<Response> => {
     // Send email notification using Resend REST API
     const resendApiKey = Deno.env.get("RESEND_API_KEY");
     
+    console.log("RESEND_API_KEY configured:", !!resendApiKey);
+    
     if (resendApiKey) {
-      const emailResponse = await fetch("https://api.resend.com/emails", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${resendApiKey}`,
-        },
-        body: JSON.stringify({
-          from: "Noti@trace-designs.online",
-          to: ["kaeltrabily@gmail.com"],
-          subject: `New Contact Form Submission from ${name}`,
-          html: `
-            <h2>New Contact Form Submission</h2>
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
-            <h3>Message:</h3>
-            <p>${message.replace(/\n/g, "<br>")}</p>
-          `,
-        }),
-      });
+      try {
+        console.log("Attempting to send email via Resend...");
+        console.log("From: Noti@trace-designs.online");
+        console.log("To: kaeltrabily@gmail.com");
+        
+        const emailResponse = await fetch("https://api.resend.com/emails", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${resendApiKey}`,
+          },
+          body: JSON.stringify({
+            from: "Noti@trace-designs.online",
+            to: ["kaeltrabily@gmail.com"],
+            subject: `New Contact Form Submission from ${name}`,
+            html: `
+              <h2>New Contact Form Submission</h2>
+              <p><strong>Name:</strong> ${name}</p>
+              <p><strong>Email:</strong> ${email}</p>
+              <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
+              <h3>Message:</h3>
+              <p>${message.replace(/\n/g, "<br>")}</p>
+            `,
+          }),
+        });
 
-      const emailResult = await emailResponse.json();
-      console.log("Email sent:", emailResult);
+        const emailResult = await emailResponse.json();
+        console.log("Resend API response status:", emailResponse.status);
+        console.log("Resend API response:", JSON.stringify(emailResult));
+        
+        if (!emailResponse.ok) {
+          console.error("Resend API error:", emailResult);
+        }
+      } catch (emailError: any) {
+        console.error("Failed to send email:", emailError.message);
+      }
+    } else {
+      console.warn("RESEND_API_KEY not configured, skipping email notification");
     }
 
     return new Response(
