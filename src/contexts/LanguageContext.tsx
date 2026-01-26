@@ -73,7 +73,7 @@ const translations = {
     'contact.OurEmail': 'Email',
     'contact.OurPhone': 'Phone',
     'contact.OurLocation': 'Our Location',
-    'contact.GetinTouch': 'Get in Touch',
+    'contact.GetinTouch': 'New Damietta - Damietta - Egypt',
     
     // Footer
     'footer.rights': 'All Rights Reserved',
@@ -143,7 +143,7 @@ const translations = {
     'contact.OurEmail': 'الايميل',
     'contact.OurPhone': 'الهاتف',
     'contact.OurLocation': 'عنواننا',
-    'contact.GetinTouch': 'تحدث معنا',
+    'contact.GetinTouch': 'دمياط الجديدة - دمياط - مصر',
     
     // Footer
     'footer.rights': 'جميع الحقوق محفوظة',
