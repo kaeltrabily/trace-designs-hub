@@ -2,7 +2,14 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Palette, Building, FileText, Calculator } from 'lucide-react';
 import interior01 from '@/assets/interior-01.jpg';
 import interior02 from '@/assets/interior-02.jpg';
+import interior03 from '@/assets/interior-03.jpg';
 import interior05 from '@/assets/interior-05.jpg';
+import interior06 from '@/assets/interior-06.jpg';
+import interior07 from '@/assets/Interior 07.jpg';
+import interior08 from '@/assets/Interior 08.jpg';
+import interior09 from '@/assets/Interior 09.jpg';
+import interior10 from '@/assets/Interior 10.jpg';
+import interior11 from '@/assets/Interior 11.jpg';
 import structureDesign from '@/assets/structure-design.gif';
 import footingsSchedule from '@/assets/footings-schedule.gif';
 import shopDrawing from '@/assets/shop-drawing.gif';
@@ -62,13 +69,51 @@ const Services = () => {
           </div>
         </div>
 
-        {/* Floating Images */}
-        <div className="absolute bottom-8 right-8 hidden lg:flex gap-4">
-          <div className="w-32 h-40 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
-            <img src={interior01} alt="" className="w-full h-full object-cover" />
-          </div>
-          <div className="w-32 h-40 rounded-lg overflow-hidden shadow-2xl transform translate-y-8 hover:scale-105 transition-transform duration-300">
-            <img src={interior02} alt="" className="w-full h-full object-cover" />
+        {/* Floating Images Gallery */}
+        <div className="absolute bottom-4 right-4 hidden lg:block">
+          <div className="flex gap-3">
+            {/* Column 1 */}
+            <div className="flex flex-col gap-3">
+              <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                <img src={interior01} alt="Interior Design 1" className="w-full h-full object-cover" />
+              </div>
+              <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                <img src={interior02} alt="Interior Design 2" className="w-full h-full object-cover" />
+              </div>
+            </div>
+            {/* Column 2 */}
+            <div className="flex flex-col gap-3 translate-y-6">
+              <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                <img src={interior03} alt="Interior Design 3" className="w-full h-full object-cover" />
+              </div>
+              <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                <img src={interior06} alt="Interior Design 6" className="w-full h-full object-cover" />
+              </div>
+            </div>
+            {/* Column 3 */}
+            <div className="flex flex-col gap-3">
+              <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                <img src={interior07} alt="Interior Design 7" className="w-full h-full object-cover" />
+              </div>
+              <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                <img src={interior08} alt="Interior Design 8" className="w-full h-full object-cover" />
+              </div>
+            </div>
+            {/* Column 4 */}
+            <div className="flex flex-col gap-3 translate-y-6">
+              <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                <img src={interior09} alt="Interior Design 9" className="w-full h-full object-cover" />
+              </div>
+              <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                <img src={interior10} alt="Interior Design 10" className="w-full h-full object-cover" />
+              </div>
+            </div>
+            {/* Column 5 */}
+            <div className="flex flex-col gap-3">
+              <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                <img src={interior11} alt="Interior Design 11" className="w-full h-full object-cover" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
