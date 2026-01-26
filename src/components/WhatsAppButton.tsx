@@ -4,7 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const WhatsAppButton = () => {
   const { t, dir } = useLanguage();
   // Replace with actual WhatsApp number
-  const whatsappNumber = '966500000000';
+  const whatsappNumber = '+201064677251';
   const message = encodeURIComponent('Hello, I would like to inquire about your services.');
 
   return (
