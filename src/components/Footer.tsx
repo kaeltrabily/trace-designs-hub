@@ -10,7 +10,7 @@ const Footer = () => {
     { icon: Instagram, href: '#', label: 'Instagram' },
     { icon: Facebook, href: '#', label: 'Facebook' },
     { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
+    { icon: Linkedin, href: 'linkedin.trace-designs.online', label: 'LinkedIn' },
   ];
 
   const scrollToSection = (href: string) => {
@@ -103,14 +103,6 @@ const Footer = () => {
             <p>
               © {currentYear} Trace Designs. {t('footer.rights')}.
             </p>
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-accent-foreground transition-colors">
-                {t('footer.privacy')}
-              </a>
-              <a href="#" className="hover:text-accent-foreground transition-colors">
-                {t('footer.terms')}
-              </a>
-            </div>
           </div>
         </div>
       </div>
