@@ -32,7 +32,7 @@ const Footer = () => {
               className="h-10 mx-auto md:mx-0 mb-4 brightness-0 invert"
             />
             <p className="text-accent-foreground/70 text-sm">
-              Transforming spaces with innovative design and engineering solutions.
+               {t('hero.description')}
             </p>
           </div>
 
