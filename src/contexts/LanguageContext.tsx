@@ -70,6 +70,10 @@ const translations = {
     'contact.message': 'Your Message',
     'contact.submit': 'Send Message',
     'contact.whatsapp': 'Chat on WhatsApp',
+    'contact.OurEmail': 'Email',
+    'contact.OurPhone': 'Phone',
+    'contact.OurLocation': 'Our Location',
+    'contact.GetinTouch': 'Get in Touch',
     
     // Footer
     'footer.rights': 'All Rights Reserved',
@@ -136,6 +140,10 @@ const translations = {
     'contact.message': 'رسالتك',
     'contact.submit': 'إرسال الرسالة',
     'contact.whatsapp': 'تحدث عبر واتساب',
+    'contact.OurEmail': 'الايميل',
+    'contact.OurPhone': 'الهاتف',
+    'contact.OurLocation': 'عنواننا',
+    'contact.GetinTouch': 'تحدث معنا',
     
     // Footer
     'footer.rights': 'جميع الحقوق محفوظة',
