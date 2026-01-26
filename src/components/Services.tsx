@@ -10,6 +10,7 @@ import interior08 from '@/assets/Interior 08.jpg';
 import interior09 from '@/assets/Interior 09.jpg';
 import interior10 from '@/assets/Interior 10.jpg';
 import interior11 from '@/assets/Interior 11.jpg';
+import interior12 from '@/assets/Interior 12.jpg';
 import structureDesign from '@/assets/structure-design.gif';
 import footingsSchedule from '@/assets/footings-schedule.gif';
 import shopDrawing from '@/assets/shop-drawing.gif';
@@ -108,6 +109,9 @@ const Services = () => {
             <div className="flex flex-col gap-3">
               <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
                 <img src={interior11} alt="Interior Design 11" className="w-full h-full object-cover" />
+              </div>
+              <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                <img src={interior12} alt="Interior Design 12" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
