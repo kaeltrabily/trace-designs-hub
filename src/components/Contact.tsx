@@ -74,16 +74,13 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="space-y-8">
             <div className="bg-card rounded-2xl p-8 shadow-soft">
-              <h3 className="text-xl font-semibold text-card-foreground mb-6">
-                Get in Touch
-              </h3>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <Phone className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="font-medium text-card-foreground">Phone</p>
+                    <p className="font-medium text-card-foreground">{t('contact.OurPhone')}</p>
                     <a
                       href="http://wa.me/201064677251"
                       className="text-muted-foreground hover:text-primary transition-colors"
@@ -98,7 +95,7 @@ const Contact = () => {
                     <Mail className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="font-medium text-card-foreground">Email</p>
+                    <p className="font-medium text-card-foreground">{t('contact.OurEmail')}</p>
                     <a
                       href="mailto:Contact-Us@Trace-Designs.online"
                       className="text-muted-foreground hover:text-primary transition-colors"
@@ -113,8 +110,8 @@ const Contact = () => {
                     <MapPin className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="font-medium text-card-foreground">Location</p>
-                    <p className="text-muted-foreground">New Damietta - Damietta - Egypt</p>
+                    <p className="font-medium text-card-foreground">{t('contact.OurLocation')}</p>
+                    <p className="text-muted-foreground">{t('contact.GetinTouch')}</p>
                   </div>
                 </div>
               </div>
