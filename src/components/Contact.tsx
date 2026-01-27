@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Send, Phone, Mail, MapPin } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { supabase } from '@/integrations/supabase/client';
 
 const Contact = () => {
@@ -14,6 +15,7 @@ const Contact = () => {
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({
@@ -59,7 +61,11 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section-padding bg-secondary/30">
+    <section 
+      ref={ref as React.RefObject<HTMLElement>}
+      id="contact" 
+      className={`section-padding bg-secondary/30 transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+    >
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
