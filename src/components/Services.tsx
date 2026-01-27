@@ -1,5 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Palette, Building, FileText, Calculator } from 'lucide-react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import interior01 from '@/assets/interior-01.jpg';
 import interior02 from '@/assets/interior-02.jpg';
 import interior03 from '@/assets/interior-03.jpg';
@@ -15,15 +16,22 @@ import structureDesign from '@/assets/structure-design.gif';
 import footingsSchedule from '@/assets/footings-schedule.gif';
 import shopDrawing from '@/assets/shop-drawing.gif';
 import quantitySurvey from '@/assets/quantity-survey.gif';
+
 const Services = () => {
-  const {
-    t,
-    language
-  } = useLanguage();
+  const { t, language } = useLanguage();
   const isRTL = language === 'ar';
+  
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation({ threshold: 0.2 });
+  const { ref: interiorRef, isVisible: interiorVisible } = useScrollAnimation({ threshold: 0.15 });
+  const { ref: structuralRef, isVisible: structuralVisible } = useScrollAnimation({ threshold: 0.15 });
+  const { ref: combinedRef, isVisible: combinedVisible } = useScrollAnimation({ threshold: 0.1 });
+
   return <section id="services" className="overflow-hidden">
       {/* Section Header */}
-      <div className="bg-background py-16 px-4">
+      <div 
+        ref={headerRef as React.RefObject<HTMLDivElement>}
+        className={`bg-background py-16 px-4 transition-all duration-700 ease-out ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      >
         <div className="container mx-auto text-center">
           <div className="flex justify-center mb-4">
             <div className="gold-line" />
@@ -38,7 +46,10 @@ const Services = () => {
       </div>
 
       {/* Interior Design - Full Width Dark */}
-      <div className="relative min-h-[80vh] bg-[#1a1a1a] overflow-hidden">
+      <div 
+        ref={interiorRef as React.RefObject<HTMLDivElement>}
+        className={`relative min-h-[80vh] bg-[#1a1a1a] overflow-hidden transition-all duration-700 ease-out ${interiorVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      >
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <img src={interior05} alt="Interior Design" className="w-full h-full object-cover opacity-40" />
@@ -119,7 +130,10 @@ const Services = () => {
       </div>
 
       {/* Structural Design - Split Layout */}
-      <div className="relative min-h-[80vh] bg-background">
+      <div 
+        ref={structuralRef as React.RefObject<HTMLDivElement>}
+        className={`relative min-h-[80vh] bg-background transition-all duration-700 ease-out ${structuralVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      >
         <div className={`flex flex-col lg:flex-row min-h-[80vh] ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
           {/* Image Side */}
           <div className="lg:w-1/2 relative overflow-hidden">
@@ -154,7 +168,10 @@ const Services = () => {
       </div>
 
       {/* Shop Drawings & Quantity Survey - Combined Section */}
-      <div className="relative min-h-[80vh] bg-background overflow-hidden flex items-center">
+      <div 
+        ref={combinedRef as React.RefObject<HTMLDivElement>}
+        className={`relative min-h-[80vh] bg-background overflow-hidden flex items-center transition-all duration-700 ease-out ${combinedVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      >
         {/* Subtle background */}
         <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 via-background to-secondary/10" />
         

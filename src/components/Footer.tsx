@@ -1,10 +1,12 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Globe, Instagram, Facebook, Linkedin } from 'lucide-react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import logo from '@/assets/logo.svg';
 
 const Footer = () => {
   const { t, language, toggleLanguage } = useLanguage();
   const currentYear = new Date().getFullYear();
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
 
   // Custom X (Twitter) icon component
   const XIcon = ({ className }: { className?: string }) => (
@@ -28,7 +30,10 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-accent text-accent-foreground">
+    <footer 
+      ref={ref as React.RefObject<HTMLElement>}
+      className={`bg-accent text-accent-foreground transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+    >
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-3 gap-8 items-center">
           {/* Logo & Description */}

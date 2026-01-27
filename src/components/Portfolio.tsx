@@ -1,12 +1,18 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ExternalLink } from 'lucide-react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const Portfolio = () => {
   const { t } = useLanguage();
   const portfolioUrl = 'http://portfolio.trace-designs.online/';
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
 
   return (
-    <section id="portfolio" className="section-padding bg-background">
+    <section 
+      ref={ref as React.RefObject<HTMLElement>}
+      id="portfolio" 
+      className={`section-padding bg-background transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+    >
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
