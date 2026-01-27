@@ -7,7 +7,6 @@ import Portfolio from '@/components/Portfolio';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
-import BackToTop from '@/components/BackToTop';
 
 const Index = () => {
   return (
@@ -23,7 +22,6 @@ const Index = () => {
         </main>
         <Footer />
         <WhatsAppButton />
-        <BackToTop />
       </div>
     </LanguageProvider>
   );
