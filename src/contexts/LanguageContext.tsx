@@ -79,6 +79,12 @@ const translations = {
     'footer.rights': 'All Rights Reserved',
     'footer.privacy': 'Privacy Policy',
     'footer.terms': 'Terms of Service',
+    
+    // Cookies
+    'cookies.title': 'Cookie Notice',
+    'cookies.message': 'We use cookies to remember your language preference and enhance your browsing experience.',
+    'cookies.accept': 'Accept',
+    'cookies.decline': 'Decline',
   },
   ar: {
     // Navigation
@@ -149,6 +155,12 @@ const translations = {
     'footer.rights': 'جميع الحقوق محفوظة',
     'footer.privacy': 'سياسة الخصوصية',
     'footer.terms': 'شروط الخدمة',
+    
+    // Cookies
+    'cookies.title': 'إشعار ملفات تعريف الارتباط',
+    'cookies.message': 'نستخدم ملفات تعريف الارتباط لتذكر تفضيل لغتك وتحسين تجربة التصفح.',
+    'cookies.accept': 'قبول',
+    'cookies.decline': 'رفض',
   },
 };
 
