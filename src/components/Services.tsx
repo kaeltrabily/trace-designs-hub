@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Palette, Building, FileText, Calculator } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import ImageWithSkeleton from '@/components/services/ImageWithSkeleton';
+import { Lightbox } from '@/components/ui/lightbox';
 import interior01 from '@/assets/interior-01.jpg';
 import interior02 from '@/assets/interior-02.jpg';
 import interior03 from '@/assets/interior-03.jpg';
@@ -18,14 +20,34 @@ import footingsSchedule from '@/assets/footings-schedule.gif';
 import shopDrawing from '@/assets/shop-drawing.gif';
 import quantitySurvey from '@/assets/quantity-survey.gif';
 
+const interiorImages = [
+  { src: interior01, alt: 'Interior Design 1' },
+  { src: interior02, alt: 'Interior Design 2' },
+  { src: interior03, alt: 'Interior Design 3' },
+  { src: interior06, alt: 'Interior Design 6' },
+  { src: interior07, alt: 'Interior Design 7' },
+  { src: interior08, alt: 'Interior Design 8' },
+  { src: interior09, alt: 'Interior Design 9' },
+  { src: interior10, alt: 'Interior Design 10' },
+  { src: interior11, alt: 'Interior Design 11' },
+  { src: interior12, alt: 'Interior Design 12' },
+];
+
 const Services = () => {
   const { t, language } = useLanguage();
   const isRTL = language === 'ar';
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
   
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation({ threshold: 0.2 });
   const { ref: interiorRef, isVisible: interiorVisible } = useScrollAnimation({ threshold: 0.15 });
   const { ref: structuralRef, isVisible: structuralVisible } = useScrollAnimation({ threshold: 0.15 });
   const { ref: combinedRef, isVisible: combinedVisible } = useScrollAnimation({ threshold: 0.1 });
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
 
   return <section id="services" className="overflow-hidden">
       {/* Section Header */}
@@ -83,51 +105,59 @@ const Services = () => {
           <div className="flex gap-3">
             {/* Column 1 */}
             <div className="flex flex-col gap-3">
-              <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+              <button onClick={() => openLightbox(0)} className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
                 <ImageWithSkeleton src={interior01} alt="Interior Design 1" className="w-full h-full object-cover" />
-              </div>
-              <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+              </button>
+              <button onClick={() => openLightbox(1)} className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
                 <ImageWithSkeleton src={interior02} alt="Interior Design 2" className="w-full h-full object-cover" />
-              </div>
+              </button>
             </div>
             {/* Column 2 */}
             <div className="flex flex-col gap-3 translate-y-6">
-              <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+              <button onClick={() => openLightbox(2)} className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
                 <ImageWithSkeleton src={interior03} alt="Interior Design 3" className="w-full h-full object-cover" />
-              </div>
-              <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+              </button>
+              <button onClick={() => openLightbox(3)} className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
                 <ImageWithSkeleton src={interior06} alt="Interior Design 6" className="w-full h-full object-cover" />
-              </div>
+              </button>
             </div>
             {/* Column 3 */}
             <div className="flex flex-col gap-3">
-              <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+              <button onClick={() => openLightbox(4)} className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
                 <ImageWithSkeleton src={interior07} alt="Interior Design 7" className="w-full h-full object-cover" />
-              </div>
-              <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+              </button>
+              <button onClick={() => openLightbox(5)} className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
                 <ImageWithSkeleton src={interior08} alt="Interior Design 8" className="w-full h-full object-cover" />
-              </div>
+              </button>
             </div>
             {/* Column 4 */}
             <div className="flex flex-col gap-3 translate-y-6">
-              <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+              <button onClick={() => openLightbox(6)} className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
                 <ImageWithSkeleton src={interior09} alt="Interior Design 9" className="w-full h-full object-cover" />
-              </div>
-              <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+              </button>
+              <button onClick={() => openLightbox(7)} className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
                 <ImageWithSkeleton src={interior10} alt="Interior Design 10" className="w-full h-full object-cover" />
-              </div>
+              </button>
             </div>
             {/* Column 5 */}
             <div className="flex flex-col gap-3">
-              <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+              <button onClick={() => openLightbox(8)} className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
                 <ImageWithSkeleton src={interior11} alt="Interior Design 11" className="w-full h-full object-cover" />
-              </div>
-              <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+              </button>
+              <button onClick={() => openLightbox(9)} className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
                 <ImageWithSkeleton src={interior12} alt="Interior Design 12" className="w-full h-full object-cover" />
-              </div>
+              </button>
             </div>
           </div>
         </div>
+
+        {/* Lightbox */}
+        <Lightbox
+          images={interiorImages}
+          initialIndex={lightboxIndex}
+          open={lightboxOpen}
+          onOpenChange={setLightboxOpen}
+        />
       </div>
 
       {/* Structural Design - Split Layout */}
