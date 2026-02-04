@@ -1,6 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Palette, Building, FileText, Calculator } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import ImageWithSkeleton from '@/components/services/ImageWithSkeleton';
 import interior01 from '@/assets/interior-01.jpg';
 import interior02 from '@/assets/interior-02.jpg';
 import interior03 from '@/assets/interior-03.jpg';
@@ -52,7 +53,7 @@ const Services = () => {
       >
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
-          <img src={interior05} alt="Interior Design" className="w-full h-full object-cover opacity-40" />
+          <ImageWithSkeleton src={interior05} alt="Interior Design" className="w-full h-full object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a] via-[#1a1a1a]/80 to-transparent" />
         </div>
         
@@ -83,46 +84,46 @@ const Services = () => {
             {/* Column 1 */}
             <div className="flex flex-col gap-3">
               <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
-                <img src={interior01} alt="Interior Design 1" className="w-full h-full object-cover" />
+                <ImageWithSkeleton src={interior01} alt="Interior Design 1" className="w-full h-full object-cover" />
               </div>
               <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
-                <img src={interior02} alt="Interior Design 2" className="w-full h-full object-cover" />
+                <ImageWithSkeleton src={interior02} alt="Interior Design 2" className="w-full h-full object-cover" />
               </div>
             </div>
             {/* Column 2 */}
             <div className="flex flex-col gap-3 translate-y-6">
               <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
-                <img src={interior03} alt="Interior Design 3" className="w-full h-full object-cover" />
+                <ImageWithSkeleton src={interior03} alt="Interior Design 3" className="w-full h-full object-cover" />
               </div>
               <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
-                <img src={interior06} alt="Interior Design 6" className="w-full h-full object-cover" />
+                <ImageWithSkeleton src={interior06} alt="Interior Design 6" className="w-full h-full object-cover" />
               </div>
             </div>
             {/* Column 3 */}
             <div className="flex flex-col gap-3">
               <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
-                <img src={interior07} alt="Interior Design 7" className="w-full h-full object-cover" />
+                <ImageWithSkeleton src={interior07} alt="Interior Design 7" className="w-full h-full object-cover" />
               </div>
               <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
-                <img src={interior08} alt="Interior Design 8" className="w-full h-full object-cover" />
+                <ImageWithSkeleton src={interior08} alt="Interior Design 8" className="w-full h-full object-cover" />
               </div>
             </div>
             {/* Column 4 */}
             <div className="flex flex-col gap-3 translate-y-6">
               <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
-                <img src={interior09} alt="Interior Design 9" className="w-full h-full object-cover" />
+                <ImageWithSkeleton src={interior09} alt="Interior Design 9" className="w-full h-full object-cover" />
               </div>
               <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
-                <img src={interior10} alt="Interior Design 10" className="w-full h-full object-cover" />
+                <ImageWithSkeleton src={interior10} alt="Interior Design 10" className="w-full h-full object-cover" />
               </div>
             </div>
             {/* Column 5 */}
             <div className="flex flex-col gap-3">
               <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
-                <img src={interior11} alt="Interior Design 11" className="w-full h-full object-cover" />
+                <ImageWithSkeleton src={interior11} alt="Interior Design 11" className="w-full h-full object-cover" />
               </div>
               <div className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
-                <img src={interior12} alt="Interior Design 12" className="w-full h-full object-cover" />
+                <ImageWithSkeleton src={interior12} alt="Interior Design 12" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -137,10 +138,10 @@ const Services = () => {
         <div className={`flex flex-col lg:flex-row min-h-fit lg:min-h-[80vh] ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
           {/* Image Side */}
           <div className="hidden lg:block lg:w-1/2 relative overflow-hidden">
-            <img src={structureDesign} alt="Structural Design" className="w-full h-64 lg:h-full object-cover" />
+            <ImageWithSkeleton src={structureDesign} alt="Structural Design" className="w-full h-64 lg:h-full object-cover" />
             {/* Overlapping secondary image */}
             <div className="absolute bottom-8 right-8 w-48 h-64 rounded-lg overflow-hidden shadow-2xl hidden lg:block border-4 border-background">
-              <img src={footingsSchedule} alt="Footings Schedule" className="w-full h-full object-cover bg-white" />
+              <ImageWithSkeleton src={footingsSchedule} alt="Footings Schedule" className="w-full h-full object-cover bg-white" />
             </div>
           </div>
           
@@ -200,7 +201,7 @@ const Services = () => {
                 <div className="rounded-xl overflow-hidden shadow-lg border border-border bg-card" style={{
                 aspectRatio: '0.9'
               }}>
-                  <img src={shopDrawing} alt="Shop Drawing Process" className="w-full h-full object-cover" />
+                  <ImageWithSkeleton src={shopDrawing} alt="Shop Drawing Process" className="w-full h-full object-cover" />
                 </div>
               </div>
               
@@ -233,7 +234,7 @@ const Services = () => {
                 <div className="rounded-xl overflow-hidden shadow-lg border border-border bg-card w-full" style={{
                 aspectRatio: '0.9'
               }}>
-                  <img src={quantitySurvey} alt="Quantity Survey Process" className="w-full h-full object-cover" />
+                  <ImageWithSkeleton src={quantitySurvey} alt="Quantity Survey Process" className="w-full h-full object-cover" />
                 </div>
               </div>
               

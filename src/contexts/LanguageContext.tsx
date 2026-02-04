@@ -60,6 +60,7 @@ const translations = {
     'portfolio.title': 'Our Portfolio',
     'portfolio.subtitle': 'Explore Our Latest Projects',
     'portfolio.cta': 'Explore Full Portfolio',
+    'portfolio.loading': 'Loading portfolio...',
     
     // Contact
     'contact.title': 'Contact Us',
@@ -136,6 +137,7 @@ const translations = {
     'portfolio.title': 'أعمالنا',
     'portfolio.subtitle': 'استكشف أحدث مشاريعنا',
     'portfolio.cta': 'استكشف المعرض الكامل',
+    'portfolio.loading': 'جاري تحميل المعرض...',
     
     // Contact
     'contact.title': 'تواصل معنا',
