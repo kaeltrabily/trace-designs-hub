@@ -132,9 +132,9 @@ const Services = () => {
       {/* Structural Design - Split Layout */}
       <div 
         ref={structuralRef as React.RefObject<HTMLDivElement>}
-        className={`relative min-h-[80vh] bg-background transition-all duration-700 ease-out ${structuralVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        className={`relative min-h-fit lg:min-h-[80vh] bg-background transition-all duration-700 ease-out ${structuralVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
       >
-        <div className={`flex flex-col lg:flex-row min-h-[80vh] ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
+        <div className={`flex flex-col lg:flex-row min-h-fit lg:min-h-[80vh] ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
           {/* Image Side */}
           <div className="hidden lg:block lg:w-1/2 relative overflow-hidden">
             <img src={structureDesign} alt="Structural Design" className="w-full h-64 lg:h-full object-cover" />
