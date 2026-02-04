@@ -1,11 +1,14 @@
+import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ExternalLink } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { Skeleton } from '@/components/ui/skeleton';
 
 const Portfolio = () => {
   const { t } = useLanguage();
   const portfolioUrl = 'http://portfolio.trace-designs.online/';
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+  const [isLoaded, setIsLoaded] = useState(false);
 
   return (
     <section 
@@ -23,14 +26,24 @@ const Portfolio = () => {
           <p className="section-subtitle mx-auto">{t('portfolio.subtitle')}</p>
         </div>
 
-        {/* Portfolio iframe */}
+        {/* Portfolio iframe with skeleton */}
         <div className="relative rounded-2xl overflow-hidden shadow-elevated bg-card aspect-[29.7/21]">
+          {!isLoaded && (
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-8">
+              <Skeleton className="w-full h-full absolute inset-0" />
+              <div className="relative z-10 flex flex-col items-center gap-3">
+                <div className="w-12 h-12 rounded-full border-4 border-primary border-t-transparent animate-spin" />
+                <p className="text-muted-foreground text-sm">{t('portfolio.loading') || 'Loading portfolio...'}</p>
+              </div>
+            </div>
+          )}
           <iframe
             src="https://www.canva.com/design/DAGSCUrTrJk/KTtNROq-mw4sTpsnpeYAEQ/view?embed"
             title="Trace Designs Portfolio"
-            className="absolute inset-0 w-full h-full border-0"
+            className={`absolute inset-0 w-full h-full border-0 transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
             loading="lazy"
             allowFullScreen
+            onLoad={() => setIsLoaded(true)}
           />
         </div>
 
