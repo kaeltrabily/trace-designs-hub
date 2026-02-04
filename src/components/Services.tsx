@@ -136,7 +136,7 @@ const Services = () => {
       >
         <div className={`flex flex-col lg:flex-row min-h-[80vh] ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
           {/* Image Side */}
-          <div className="lg:w-1/2 relative overflow-hidden">
+          <div className="hidden lg:block lg:w-1/2 relative overflow-hidden">
             <img src={structureDesign} alt="Structural Design" className="w-full h-64 lg:h-full object-cover" />
             {/* Overlapping secondary image */}
             <div className="absolute bottom-8 right-8 w-48 h-64 rounded-lg overflow-hidden shadow-2xl hidden lg:block border-4 border-background">
