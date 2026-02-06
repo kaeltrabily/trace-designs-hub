@@ -104,9 +104,9 @@ const Services = () => {
             </p>
           </div>
 
-          {/* Mobile Gallery */}
+          {/* Mobile Gallery - All images */}
           <div className="grid grid-cols-3 gap-2 mt-8 lg:hidden w-full max-w-md">
-            {interiorImages.slice(1, 7).map((image, index) => (
+            {interiorImages.slice(1).map((image, index) => (
               <button 
                 key={index}
                 onClick={() => openLightbox(index + 1)} 
