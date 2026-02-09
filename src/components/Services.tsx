@@ -91,10 +91,10 @@ const Services = () => {
             <h3 className="text-4xl md:text-5xl font-serif text-primary-foreground mb-6 leading-tight break-words">
               {t('services.interior.title')}
             </h3>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8 break-words">
+            <p className="text-primary-foreground text-lg leading-relaxed mb-8 break-words">
               {t('services.interior.description')}
             </p>
-            <p className="font-medium text-muted-foreground break-words">
+            <p className="font-medium text-primary-foreground break-words">
               {t('services.interior.deliverables')}
             </p>
           </div>
