@@ -21,7 +21,6 @@ import shopDrawing from '@/assets/shop-drawing.gif';
 import quantitySurvey from '@/assets/quantity-survey.gif';
 
 const interiorImages = [
-  { src: interior05, alt: 'Interior Design Background' },
   { src: interior01, alt: 'Interior Design 1' },
   { src: interior02, alt: 'Interior Design 2' },
   { src: interior03, alt: 'Interior Design 3' },
@@ -74,15 +73,11 @@ const Services = () => {
         ref={interiorRef as React.RefObject<HTMLDivElement>}
         className={`relative min-h-[80vh] bg-[#1a1a1a] overflow-hidden transition-all duration-700 ease-out ${interiorVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
       >
-        {/* Background Image with Overlay - Clickable */}
-        <button 
-          onClick={() => openLightbox(0)} 
-          className="absolute inset-0 w-full h-full cursor-pointer focus:outline-none"
-          aria-label="View interior design gallery"
-        >
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0">
           <ImageWithSkeleton src={interior05} alt="Interior Design" className="w-full h-full object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a] via-[#1a1a1a]/80 to-transparent pointer-events-none" />
-        </button>
+        </div>
         
         {/* Content */}
         <div className={`relative z-10 container mx-auto px-4 py-20 flex flex-col justify-center min-h-[80vh] ${isRTL ? 'items-end text-right' : 'items-start text-left'}`}>
@@ -93,79 +88,50 @@ const Services = () => {
               </div>
               <span className="text-primary font-medium tracking-widest uppercase text-sm">01</span>
             </div>
-            <h3 className="text-4xl md:text-5xl font-serif text-white mb-6 leading-tight break-words">
+            <h3 className="text-4xl md:text-5xl font-serif text-primary-foreground mb-6 leading-tight break-words">
               {t('services.interior.title')}
             </h3>
-            <p className="text-gray-300 text-lg leading-relaxed mb-8 break-words">
+            <p className="text-muted-foreground text-lg leading-relaxed mb-8 break-words">
               {t('services.interior.description')}
             </p>
-            <p className="font-medium text-gray-300 break-words">
+            <p className="font-medium text-muted-foreground break-words">
               {t('services.interior.deliverables')}
             </p>
           </div>
 
-          {/* Mobile Gallery - All images */}
-          <div className="grid grid-cols-3 gap-2 mt-8 lg:hidden w-full max-w-md">
-            {interiorImages.slice(1).map((image, index) => (
+          {/* Mobile/Tablet Gallery - All 10 images clickable with skeleton & hover */}
+          <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 mt-8 lg:hidden w-full">
+            {interiorImages.map((image, index) => (
               <button 
                 key={index}
-                onClick={() => openLightbox(index + 1)} 
-                className="aspect-square rounded-lg overflow-hidden shadow-lg cursor-pointer hover:scale-105 transition-transform duration-300"
+                onClick={() => openLightbox(index)} 
+                className="aspect-square rounded-lg overflow-hidden shadow-lg cursor-pointer group"
               >
-                <ImageWithSkeleton src={image.src} alt={image.alt} className="w-full h-full object-cover" />
+                <div className="w-full h-full transition-transform duration-300 group-hover:scale-110">
+                  <ImageWithSkeleton src={image.src} alt={image.alt} className="w-full h-full object-cover" />
+                </div>
               </button>
             ))}
           </div>
         </div>
 
-        {/* Floating Images Gallery - Desktop */}
+        {/* Floating Images Gallery - Desktop: all 10 images */}
         <div className="absolute bottom-4 right-4 hidden lg:block">
           <div className="flex gap-3">
-            {/* Column 1 */}
-            <div className="flex flex-col gap-3">
-              <button onClick={() => openLightbox(1)} className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
-                <ImageWithSkeleton src={interior01} alt="Interior Design 1" className="w-full h-full object-cover" />
-              </button>
-              <button onClick={() => openLightbox(2)} className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
-                <ImageWithSkeleton src={interior02} alt="Interior Design 2" className="w-full h-full object-cover" />
-              </button>
-            </div>
-            {/* Column 2 */}
-            <div className="flex flex-col gap-3 translate-y-6">
-              <button onClick={() => openLightbox(3)} className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
-                <ImageWithSkeleton src={interior03} alt="Interior Design 3" className="w-full h-full object-cover" />
-              </button>
-              <button onClick={() => openLightbox(4)} className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
-                <ImageWithSkeleton src={interior06} alt="Interior Design 6" className="w-full h-full object-cover" />
-              </button>
-            </div>
-            {/* Column 3 */}
-            <div className="flex flex-col gap-3">
-              <button onClick={() => openLightbox(5)} className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
-                <ImageWithSkeleton src={interior07} alt="Interior Design 7" className="w-full h-full object-cover" />
-              </button>
-              <button onClick={() => openLightbox(6)} className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
-                <ImageWithSkeleton src={interior08} alt="Interior Design 8" className="w-full h-full object-cover" />
-              </button>
-            </div>
-            {/* Column 4 */}
-            <div className="flex flex-col gap-3 translate-y-6">
-              <button onClick={() => openLightbox(7)} className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
-                <ImageWithSkeleton src={interior09} alt="Interior Design 9" className="w-full h-full object-cover" />
-              </button>
-              <button onClick={() => openLightbox(8)} className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
-                <ImageWithSkeleton src={interior10} alt="Interior Design 10" className="w-full h-full object-cover" />
-              </button>
-            </div>
-            {/* Column 5 */}
-            <div className="flex flex-col gap-3">
-              <button onClick={() => openLightbox(9)} className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
-                <ImageWithSkeleton src={interior11} alt="Interior Design 11" className="w-full h-full object-cover" />
-              </button>
-              <button onClick={() => openLightbox(10)} className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 cursor-pointer">
-                <ImageWithSkeleton src={interior12} alt="Interior Design 12" className="w-full h-full object-cover" />
-              </button>
-            </div>
+            {[0, 1, 2, 3, 4].map((col) => (
+              <div key={col} className={`flex flex-col gap-3 ${col % 2 === 1 ? 'translate-y-6' : ''}`}>
+                {interiorImages.slice(col * 2, col * 2 + 2).map((image, row) => {
+                  const index = col * 2 + row;
+                  return (
+                    <button key={index} onClick={() => openLightbox(index)} className="w-24 h-28 rounded-lg overflow-hidden shadow-2xl cursor-pointer group">
+                      <div className="w-full h-full transition-transform duration-300 group-hover:scale-110">
+                        <ImageWithSkeleton src={image.src} alt={image.alt} className="w-full h-full object-cover" />
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            ))}
           </div>
         </div>
 
