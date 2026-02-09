@@ -84,7 +84,6 @@ const Lightbox = ({ images, initialIndex = 0, open, onOpenChange }: LightboxProp
             className="absolute top-4 right-4 z-50 text-foreground hover:bg-secondary"
             onClick={() => onOpenChange(false)}
           >
-            <X className="h-6 w-6" />
           </Button>
 
           {/* Previous button */}
