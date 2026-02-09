@@ -2,7 +2,6 @@ import * as React from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 interface LightboxProps {
   images: { src: string; alt: string }[];
@@ -11,21 +10,26 @@ interface LightboxProps {
   onOpenChange: (open: boolean) => void;
 }
 
+const SWIPE_THRESHOLD = 50;
+
 const Lightbox = ({ images, initialIndex = 0, open, onOpenChange }: LightboxProps) => {
   const [currentIndex, setCurrentIndex] = React.useState(initialIndex);
+  const touchStartX = React.useRef<number | null>(null);
+  const touchStartY = React.useRef<number | null>(null);
 
   React.useEffect(() => {
     setCurrentIndex(initialIndex);
   }, [initialIndex]);
 
-  const goToPrevious = () => {
+  const goToPrevious = React.useCallback(() => {
     setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  };
+  }, [images.length]);
 
-  const goToNext = () => {
+  const goToNext = React.useCallback(() => {
     setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  };
+  }, [images.length]);
 
+  // Keyboard navigation
   React.useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!open) return;
@@ -36,14 +40,43 @@ const Lightbox = ({ images, initialIndex = 0, open, onOpenChange }: LightboxProp
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [open, images.length]);
+  }, [open, goToPrevious, goToNext, onOpenChange]);
+
+  // Touch/swipe handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null || touchStartY.current === null) return;
+
+    const deltaX = e.changedTouches[0].clientX - touchStartX.current;
+    const deltaY = e.changedTouches[0].clientY - touchStartY.current;
+
+    // Only swipe if horizontal movement is dominant
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > SWIPE_THRESHOLD) {
+      if (deltaX > 0) {
+        goToPrevious();
+      } else {
+        goToNext();
+      }
+    }
+
+    touchStartX.current = null;
+    touchStartY.current = null;
+  };
 
   if (images.length === 0) return null;
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 bg-background/95 backdrop-blur-sm border-border">
-        <div className="relative flex items-center justify-center w-full h-[90vh]">
+        <div
+          className="relative flex items-center justify-center w-full h-[90vh] select-none"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
           {/* Close button */}
           <Button
             variant="ghost"
@@ -70,7 +103,8 @@ const Lightbox = ({ images, initialIndex = 0, open, onOpenChange }: LightboxProp
           <img
             src={images[currentIndex]?.src}
             alt={images[currentIndex]?.alt}
-            className="max-w-full max-h-full object-contain p-4"
+            className="max-w-full max-h-full object-contain p-4 pointer-events-none"
+            draggable={false}
           />
 
           {/* Next button */}
