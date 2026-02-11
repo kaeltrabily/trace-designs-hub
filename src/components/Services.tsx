@@ -116,7 +116,7 @@ const Services = () => {
         </div>
 
         {/* Floating Images Gallery - Desktop: all 10 images */}
-        <div className="absolute bottom-4 right-4 hidden lg:block">
+        <div className="absolute bottom-4 right-4 hidden lg:block z-20">
           <div className="flex gap-3">
             {[0, 1, 2, 3, 4].map((col) => (
               <div key={col} className={`flex flex-col gap-3 ${col % 2 === 1 ? 'translate-y-6' : ''}`}>
