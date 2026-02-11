@@ -71,7 +71,7 @@ const Lightbox = ({ images, initialIndex = 0, open, onOpenChange }: LightboxProp
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 bg-background/95 backdrop-blur-sm border-border">
+      <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 bg-background/95 backdrop-blur-sm border-border [&>button.absolute]:hidden">
         <div
           className="relative flex items-center justify-center w-full h-[90vh] select-none"
           onTouchStart={handleTouchStart}
