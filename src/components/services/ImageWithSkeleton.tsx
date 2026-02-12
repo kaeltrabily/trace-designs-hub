@@ -20,6 +20,7 @@ const ImageWithSkeleton = ({ src, alt, className = '', skeletonClassName = '' }:
         src={src}
         alt={alt}
         className={`${className} transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+        loading="lazy"
         onLoad={() => setIsLoaded(true)}
       />
     </div>

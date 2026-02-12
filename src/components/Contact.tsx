@@ -79,10 +79,10 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Info */}
           <div className="space-y-8">
-            <div className="bg-card rounded-2xl p-8 shadow-soft">
+            <div className="bg-card rounded-2xl p-8 shadow-soft hover:shadow-elevated transition-shadow duration-300">
               <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start gap-4 group">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
                     <Phone className="w-5 h-5 text-primary" />
                   </div>
                   <div>
@@ -96,8 +96,8 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start gap-4 group">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
                     <Mail className="w-5 h-5 text-primary" />
                   </div>
                   <div>
@@ -111,8 +111,8 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start gap-4 group">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
                     <MapPin className="w-5 h-5 text-primary" />
                   </div>
                   <div>
@@ -125,7 +125,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-card rounded-2xl p-8 shadow-soft">
+          <div className="bg-card rounded-2xl p-8 shadow-soft hover:shadow-elevated transition-shadow duration-300">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label
