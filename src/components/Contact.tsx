@@ -181,8 +181,7 @@ const Contact = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   maxLength={20}
-                  dir="ltr"
-                  className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-left"
+                  className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground placeholder:text-right focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                   placeholder={t('contact.phone')}
                 />
               </div>
