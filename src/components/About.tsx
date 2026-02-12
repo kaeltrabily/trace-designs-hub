@@ -38,8 +38,9 @@ const About = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-elevated">
               <img
                 src={interior02}
-                alt="Trace Designs Interior"
+                alt="Trace Designs premium interior design showcase"
                 className="w-full h-[400px] lg:h-[500px] object-cover"
+                loading="lazy"
               />
             </div>
             {/* Decorative element */}
@@ -57,8 +58,12 @@ const About = () => {
             {/* Features */}
             <div className="space-y-6">
               {features.map((feature, index) => (
-                <div key={index} className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                <div 
+                  key={index} 
+                  className="flex gap-4 group"
+                  style={{ transitionDelay: `${index * 150}ms` }}
+                >
+                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-primary/20">
                     <feature.icon className="w-6 h-6 text-primary" />
                   </div>
                   <div>

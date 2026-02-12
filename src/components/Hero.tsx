@@ -21,8 +21,9 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={interior01}
-          alt="Luxury Interior Design"
+          alt="Luxury Interior Design by Trace Designs"
           className="w-full h-full object-cover"
+          fetchPriority="high"
         />
         <div className="img-overlay" />
       </div>
