@@ -76,7 +76,7 @@ const Services = () => {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <ImageWithSkeleton src={interior05} alt="Interior Design" className="w-full h-full object-cover opacity-40" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a] via-[#1a1a1a]/80 to-transparent pointer-events-none" />
+          <div className={`absolute inset-0 pointer-events-none ${isRTL ? 'bg-gradient-to-l from-[#1a1a1a] via-[#1a1a1a]/80 to-transparent' : 'bg-gradient-to-r from-[#1a1a1a] via-[#1a1a1a]/80 to-transparent'}`} />
         </div>
         
         {/* Content */}
@@ -116,7 +116,7 @@ const Services = () => {
         </div>
 
         {/* Floating Images Gallery - Desktop: all 10 images */}
-        <div className="absolute bottom-4 right-4 hidden lg:block z-20">
+        <div className={`absolute bottom-4 hidden lg:block z-20 ${isRTL ? 'left-4' : 'right-4'}`}>
           <div className="flex gap-3">
             {[0, 1, 2, 3, 4].map((col) => (
               <div key={col} className={`flex flex-col gap-3 ${col % 2 === 1 ? 'translate-y-6' : ''}`}>
