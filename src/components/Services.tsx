@@ -76,12 +76,12 @@ const Services = () => {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <ImageWithSkeleton src={interior05} alt="Interior Design" className="w-full h-full object-cover opacity-40" />
-          <div className={`absolute inset-0 pointer-events-none ${isRTL ? 'bg-gradient-to-l from-[#1a1a1a] via-[#1a1a1a]/80 to-transparent' : 'bg-gradient-to-r from-[#1a1a1a] via-[#1a1a1a]/80 to-transparent'}`} />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a] via-[#1a1a1a]/80 to-transparent pointer-events-none" />
         </div>
         
         {/* Content */}
-        <div className={`relative z-10 container mx-auto px-4 py-20 flex flex-col justify-center min-h-[80vh] ${isRTL ? 'lg:items-end items-end text-right' : 'items-start text-left'}`}>
-          <div className={`max-w-xl ${isRTL ? 'lg:mr-0' : ''}`}>
+        <div className={`relative z-10 container mx-auto px-4 py-20 flex flex-col justify-center min-h-[80vh] ${isRTL ? 'items-end text-right' : 'items-start text-left'}`}>
+          <div className="max-w-xl">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center shrink-0">
                 <Palette className="w-8 h-8 text-primary-foreground" />
@@ -116,7 +116,7 @@ const Services = () => {
         </div>
 
         {/* Floating Images Gallery - Desktop: all 10 images */}
-        <div className={`absolute bottom-4 hidden lg:block z-20 ${isRTL ? 'left-4' : 'right-4'}`}>
+        <div className="absolute bottom-4 right-4 hidden lg:block z-20">
           <div className="flex gap-3">
             {[0, 1, 2, 3, 4].map((col) => (
               <div key={col} className={`flex flex-col gap-3 ${col % 2 === 1 ? 'translate-y-6' : ''}`}>
