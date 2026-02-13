@@ -80,8 +80,8 @@ const Services = () => {
         </div>
         
         {/* Content */}
-        <div className={`relative z-10 container mx-auto px-4 py-20 flex flex-col justify-center min-h-[80vh] ${isRTL ? 'items-end text-right' : 'items-start text-left'}`}>
-          <div className="max-w-xl">
+        <div className={`relative z-10 container mx-auto px-4 py-20 flex flex-col justify-center min-h-[80vh] ${isRTL ? 'lg:items-end items-end text-right' : 'items-start text-left'}`}>
+          <div className={`max-w-xl ${isRTL ? 'lg:mr-0' : ''}`}>
             <div className="flex items-center gap-4 mb-6">
               <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center shrink-0">
                 <Palette className="w-8 h-8 text-primary-foreground" />
