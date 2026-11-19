@@ -3,7 +3,11 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Send, Phone, Mail, MapPin } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { supabase } from '@/integrations/supabase/client';
+
+// Web3Forms access key is public by design (an email alias, not a secret).
+// Registered to the site owner's email; spam is blocked by Web3Forms'
+// built-in filtering plus the honeypot field below.
+const WEB3FORMS_ACCESS_KEY = '82fd5ca7-07dc-4b8f-b325-985fb7e39e62';
 
 const Contact = () => {
   const { t, dir } = useLanguage();
@@ -29,17 +33,30 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase.functions.invoke('send-contact-email', {
-        body: {
+      const form = e.currentTarget as HTMLFormElement;
+      const botcheck = (form.elements.namedItem('botcheck') as HTMLInputElement | null)?.checked ?? false;
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `New Contact Form Submission from ${formData.name.trim()}`,
+          from_name: 'Trace Designs Website',
           name: formData.name.trim(),
           email: formData.email.trim(),
           phone: formData.phone.trim() || undefined,
           message: formData.message.trim(),
-        },
+          botcheck,
+        }),
       });
 
-      if (error) {
-        throw error;
+      const result = await response.json();
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Submission failed');
       }
 
       toast({
@@ -127,6 +144,16 @@ const Contact = () => {
           {/* Contact Form */}
           <div className="bg-card rounded-2xl p-8 shadow-soft hover:shadow-elevated transition-shadow duration-300">
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Honeypot: real visitors never see or fill this; bots do. */}
+              <input
+                type="checkbox"
+                name="botcheck"
+                tabIndex={-1}
+                autoComplete="off"
+                className="hidden"
+                style={{ display: 'none' }}
+                aria-hidden="true"
+              />
               <div>
                 <label
                   htmlFor="name"
