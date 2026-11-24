@@ -20,9 +20,9 @@ const translations = {
     
     // Hero
     'hero.title': 'Trace Designs',
-    'hero.subtitle': 'Building Lasting Trace',
-    'hero.description': 'Delivers integrated engineering and design solutions that turn ideas into efficient, buildable realities.',
-    'hero.cta': 'Get a Quote',
+    'hero.subtitle': 'An Engineering Office for Structural & Interior Design',
+    'hero.description': 'Structural design, interior design and decor, shop drawings, and drafting. We work directly with clients and also support other engineering offices.',
+    'hero.cta': 'Request a Quote',
     'hero.cta.secondary': 'View Our Work',
     
     // About
@@ -97,15 +97,15 @@ const translations = {
     
     // Hero
     'hero.title': 'تريس ديزاينز',
-    'hero.subtitle': 'نبني أثراً يدوم',
-    'hero.description': 'تقدم حلول تصميم وهندسة متكاملة تحوّل الأفكار إلى واقع عملي قابل للتنفيذ.',
-    'hero.cta': 'احصل على عرض سعر',
+    'hero.subtitle': 'مكتب هندسي للتصميم الإنشائي والتصميم الداخلي',
+    'hero.description': 'تصميم إنشائي، وتصميم داخلي وديكور، ورسومات تنفيذية، ورسم هندسي. نعمل مع العملاء مباشرة، وندعم أيضًا المكاتب الهندسية الأخرى.',
+    'hero.cta': 'اطلب عرض سعر',
     'hero.cta.secondary': 'شاهد أعمالنا',
     
     // About
     'about.title': 'من نحن',
     'about.subtitle': 'صناعة التميز منذ البداية',
-    'about.description': 'في أثر للتصميم الهندسي (Trace Designs)، نحن فريق مكرس من المحترفين المتخصصين في الهندسة الإنشائية وخدمات العمارة. مع شغف بالابتكار والتزام بالتميز، نقدم حلولاً مصممة خصيصًا تلبي الاحتياجات المتطورة لعملائنا.',
+    'about.description': 'في تريس ديزاينز (Trace Designs)، نحن فريق مكرس من المحترفين المتخصصين في الهندسة الإنشائية وخدمات العمارة. مع شغف بالابتكار والتزام بالتميز، نقدم حلولاً مصممة خصيصًا تلبي الاحتياجات المتطورة لعملائنا.',
     'about.mission.title': 'مهمتنا',
     'about.mission': 'نهدف إلى تصميم منشآت لا تقاوم اختبار الزمن فحسب، بل تترك أيضًا تأثيرًا ذا مغزى ودائم على المجتمعات التي تخدمها. ',
     'about.vision.title': 'رؤيتنا',
