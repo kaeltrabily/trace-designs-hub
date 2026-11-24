@@ -86,7 +86,7 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-end gap-4">
             {/* Social Links */}
             <div className="flex gap-4">
-              {socialLinks.map((social, index) => (
+              {socialLinks.filter((s) => s.href !== "#" && s.label !== "LinkedIn").map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
